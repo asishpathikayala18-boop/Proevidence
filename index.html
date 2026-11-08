@@ -1,0 +1,2587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Providence | Vedic Destiny, Daily Colors & Telugu Panchangam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Telugu:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-white: #FFFFFF;
+      --bg-canvas: #F8F9FA;
+      --bg-card: #FFFFFF;
+      --bg-card-subtle: #F3F4F6;
+      --red-kunkuma: #B71C1C;
+      --red-dark: #881313;
+      --red-soft: #FEF2F2;
+      --red-border: #FCA5A5;
+      --green-haritha: #15803D;
+      --green-dark: #14532D;
+      --green-soft: #F0FDF4;
+      --green-border: #86EFAC;
+      --gold-accent: #B45309;
+      --gold-soft: #FFFBEB;
+      --gold-border: #FDE68A;
+      --text-dark: #111827;
+      --text-body: #374151;
+      --text-muted: #6B7280;
+      --border-light: #E5E7EB;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.08);
+      --radius-lg: 14px;
+      --radius-md: 10px;
+      --radius-sm: 6px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Telugu', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-canvas);
+      color: var(--text-body);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* Minimalist Top Header */
+    .app-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-white);
+      border-bottom: 2px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--red-kunkuma), #DC2626);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 1.4rem;
+      font-weight: 800;
+      border: 2px solid #FDE68A;
+      box-shadow: 0 2px 6px rgba(183, 28, 28, 0.25);
+    }
+    .brand-title-text {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      color: var(--red-kunkuma);
+      line-height: 1.1;
+    }
+    .brand-sub-text {
+      font-family: 'Noto Sans Telugu', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--green-haritha);
+    }
+
+    .main-nav-tabs {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      padding: 7px 14px;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .tab-btn:hover {
+      background: var(--bg-card-subtle);
+      border-color: var(--border-light);
+    }
+    .tab-btn.active {
+      background: var(--red-kunkuma);
+      color: #FFFFFF;
+      border-color: var(--red-kunkuma);
+      box-shadow: 0 2px 6px rgba(183, 28, 28, 0.25);
+    }
+
+    .page-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Screen Sections */
+    .view-section {
+      display: none;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+    .view-section.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Cards */
+    .content-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .card-top-red { border-top: 4px solid var(--red-kunkuma); }
+    .card-top-green { border-top: 4px solid var(--green-haritha); }
+
+    /* Spiritual Disclaimer */
+    .spiritual-disclaimer {
+      background: var(--gold-soft);
+      border: 1px solid var(--gold-border);
+      border-left: 4px solid var(--gold-accent);
+      padding: 12px 18px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .disclaimer-icon { font-size: 1.4rem; color: var(--gold-accent); }
+    .disclaimer-text {
+      font-size: 0.86rem;
+      color: var(--text-dark);
+      line-height: 1.45;
+    }
+
+    /* Accuracy Meter */
+    .meter-banner {
+      background: var(--green-soft);
+      border: 1px solid var(--green-border);
+      border-radius: var(--radius-sm);
+      padding: 14px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .meter-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--green-dark);
+    }
+    .meter-sub {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .meter-track-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .meter-track {
+      width: 160px;
+      height: 10px;
+      background: #E5E7EB;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .meter-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--green-haritha), #22C55E);
+      width: 68%;
+      transition: width 0.3s ease;
+    }
+    .meter-pct {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--green-dark);
+    }
+
+    /* Form Fields Grid */
+    .form-inputs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+    .input-box-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .input-box-group label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tag-badge-req {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--red-kunkuma);
+      background: var(--red-soft);
+      padding: 2px 6px;
+      border-radius: 8px;
+      border: 1px solid var(--red-border);
+    }
+    .tag-badge-opt {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--green-haritha);
+      background: var(--green-soft);
+      padding: 2px 6px;
+      border-radius: 8px;
+      border: 1px solid var(--green-border);
+    }
+    .custom-input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      font-family: inherit;
+      color: var(--text-dark);
+      background: #FFFFFF;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .custom-input:focus {
+      outline: none;
+      border-color: var(--red-kunkuma);
+      box-shadow: 0 0 0 3px rgba(183, 28, 28, 0.1);
+    }
+
+    /* Buttons */
+    .btn-submit-red {
+      background: var(--red-kunkuma);
+      color: #FFFFFF;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 24px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(183, 28, 28, 0.25);
+      transition: all 0.18s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-submit-red:hover {
+      background: var(--red-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(183, 28, 28, 0.35);
+    }
+
+    /* Native Profile Bar */
+    .native-profile-bar {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-left: 5px solid var(--red-kunkuma);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .profile-title-name {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--red-kunkuma);
+    }
+    .profile-subtitle-info {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .profile-tags-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pill-red {
+      background: var(--red-soft);
+      color: var(--red-kunkuma);
+      border: 1px solid var(--red-border);
+      padding: 4px 10px;
+      border-radius: 16px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .pill-green {
+      background: var(--green-soft);
+      color: var(--green-haritha);
+      border: 1px solid var(--green-border);
+      padding: 4px 10px;
+      border-radius: 16px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .pill-gold {
+      background: var(--gold-soft);
+      color: var(--gold-accent);
+      border: 1px solid var(--gold-border);
+      padding: 4px 10px;
+      border-radius: 16px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    /* FULL ASTROLOGER PREDICTION SECTIONS */
+    .astrologer-reading-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+    .reading-sec-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--red-soft);
+    }
+    .reading-sec-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--red-kunkuma);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+    .reading-sec-title {
+      font-family: 'Noto Sans Telugu', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--red-kunkuma);
+    }
+    .reading-sec-subtitle {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      display: block;
+    }
+
+    .astrologer-bullet {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-family: 'Noto Sans Telugu', sans-serif;
+      font-size: 0.98rem;
+      line-height: 1.8;
+      color: #1F2937;
+    }
+    .bullet-sym {
+      color: var(--red-kunkuma);
+      font-size: 1.25rem;
+      line-height: 1.2;
+    }
+    .bullet-content strong {
+      color: var(--red-dark);
+      font-weight: 700;
+    }
+
+    /* DAY-BY-DAY DRESS COLORS GRID */
+    .days-grid-wrap {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .day-cloth-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    .day-cloth-card:hover {
+      border-color: var(--red-border);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .day-cloth-card.is-today {
+      border: 2px solid var(--green-haritha);
+      background: #FDFEFE;
+    }
+    .today-tag-pill {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--green-haritha);
+      color: #FFFFFF;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 10px;
+      letter-spacing: 0.5px;
+    }
+    .day-top-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .day-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: #FFFFFF;
+    }
+    .day-label-en {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text-dark);
+    }
+    .day-label-te {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--red-kunkuma);
+      font-family: 'Noto Sans Telugu', sans-serif;
+    }
+    .swatches-flex {
+      display: flex;
+      gap: 6px;
+      margin: 8px 0 10px;
+      flex-wrap: wrap;
+    }
+    .swatch-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 8px;
+      border-radius: 14px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      border: 1px solid var(--border-light);
+      background: var(--bg-canvas);
+    }
+    .swatch-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.15);
+    }
+    .cloth-telugu-desc {
+      font-family: 'Noto Sans Telugu', sans-serif;
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.55;
+      border-top: 1px dashed var(--border-light);
+      padding-top: 8px;
+      margin-top: 8px;
+    }
+
+    /* KUNDALI SVG & TIMELINE */
+    .kundali-center-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+    .kundali-chart-svg {
+      max-width: 440px;
+      width: 100%;
+      background: #FFFFFF;
+      border: 2px solid var(--red-kunkuma);
+      border-radius: 10px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+      margin-top: 14px;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .data-table th {
+      background: var(--bg-card-subtle);
+      color: var(--text-dark);
+      font-weight: 700;
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 2px solid var(--border-light);
+    }
+    .data-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-body);
+    }
+    .data-table tr.active-dasha {
+      background: var(--red-soft);
+      font-weight: 700;
+      color: var(--red-kunkuma);
+    }
+
+    /* INTERACTIVE TELUGU CALENDAR */
+    .cal-split-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 20px;
+    }
+    @media (max-width: 992px) {
+      .cal-split-layout { grid-template-columns: 1fr; }
+    }
+
+    .cal-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .cal-title-main {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--red-kunkuma);
+    }
+    .cal-btn-group {
+      display: flex;
+      gap: 6px;
+    }
+    .cal-step-btn {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .cal-step-btn:hover {
+      background: var(--red-soft);
+      border-color: var(--red-border);
+      color: var(--red-kunkuma);
+    }
+
+    .cal-grid-7 {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+    }
+    .cal-head-cell {
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      padding: 7px 2px;
+      background: var(--bg-card-subtle);
+      border-radius: 4px;
+    }
+    .cal-head-cell.sun {
+      color: var(--red-kunkuma);
+      background: var(--red-soft);
+    }
+
+    .cal-date-tile {
+      min-height: 74px;
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-light);
+      border-radius: 6px;
+      padding: 5px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.15s ease;
+      position: relative;
+    }
+    .cal-date-tile:hover {
+      border-color: var(--red-kunkuma);
+      box-shadow: 0 2px 6px rgba(183, 28, 28, 0.15);
+      transform: translateY(-1px);
+    }
+    .cal-date-tile.is-other {
+      opacity: 0.3;
+      background: #FAFAFA;
+      pointer-events: none;
+    }
+    .cal-date-tile.is-chosen {
+      border: 2px solid var(--red-kunkuma) !important;
+      background: #FFFDFD;
+      box-shadow: 0 3px 8px rgba(183, 28, 28, 0.2);
+    }
+    .cal-date-tile.is-today-tile {
+      background: var(--green-soft);
+      border-color: var(--green-haritha);
+    }
+    .tile-num-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tile-number {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--text-dark);
+    }
+    .cal-date-tile.sun-tile .tile-number {
+      color: var(--red-kunkuma);
+    }
+    .tile-tithi-name {
+      font-family: 'Noto Sans Telugu', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--green-haritha);
+      line-height: 1.1;
+    }
+    .tile-fest-badge {
+      background: var(--red-kunkuma);
+      color: #FFFFFF;
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 2px 4px;
+      border-radius: 3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 2px;
+      font-family: 'Noto Sans Telugu', sans-serif;
+    }
+
+    /* DATE INSPECTOR CARD */
+    .inspector-panel {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-top: 4px solid var(--red-kunkuma);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .inspector-title-line {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--red-kunkuma);
+      margin-bottom: 2px;
+    }
+    .inspector-tithi-line {
+      font-family: 'Noto Sans Telugu', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--green-haritha);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .panchang-boxes-2x2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .pbox {
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .pbox-rahu {
+      background: var(--red-soft);
+      border: 1px solid var(--red-border);
+      border-left: 3px solid var(--red-kunkuma);
+    }
+    .pbox-amrutha {
+      background: var(--green-soft);
+      border: 1px solid var(--green-border);
+      border-left: 3px solid var(--green-haritha);
+    }
+    .pbox-dhur {
+      background: var(--gold-soft);
+      border: 1px solid var(--gold-border);
+      border-left: 3px solid var(--gold-accent);
+    }
+    .pbox-abhijit {
+      background: #F0F9FF;
+      border: 1px solid #BAE6FD;
+      border-left: 3px solid #0284C7;
+    }
+
+    .pbox-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .pbox-rahu .pbox-tag { color: var(--red-kunkuma); }
+    .pbox-amrutha .pbox-tag { color: var(--green-haritha); }
+    .pbox-dhur .pbox-tag { color: var(--gold-accent); }
+    .pbox-abhijit .pbox-tag { color: #0284C7; }
+
+    .pbox-time {
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: var(--text-dark);
+    }
+    .pbox-hint {
+      font-family: 'Noto Sans Telugu', sans-serif;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .panchang-rows-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .prow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.88rem;
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--border-light);
+    }
+    .prow-label {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .prow-val {
+      font-weight: 700;
+      color: var(--text-dark);
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .header-container { flex-direction: column; align-items: flex-start; }
+      .main-nav-tabs { width: 100%; justify-content: flex-start; }
+      .panchang-boxes-2x2 { grid-template-columns: 1fr; }
+    }
+
+    /* Floating Corner Branding: Powered by Asish Pathikayala with AP Logo */
+    .ap-corner-branding {
+      position: fixed;
+      bottom: 18px;
+      right: 20px;
+      z-index: 9999;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      border: 1.5px solid var(--border-light);
+      border-left: 3.5px solid var(--red-kunkuma);
+      border-radius: 30px;
+      padding: 6px 14px 6px 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      transition: all 0.25s ease;
+      user-select: none;
+      text-decoration: none;
+    }
+    .ap-corner-branding:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(183, 28, 28, 0.2);
+      border-color: var(--red-border);
+      background: #FFFFFF;
+    }
+    .ap-logo-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--red-kunkuma), #DC2626);
+      color: #FFFFFF;
+      font-family: 'Cinzel', serif;
+      font-weight: 900;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid #FDE68A;
+      box-shadow: 0 2px 6px rgba(183, 28, 28, 0.3);
+    }
+    .ap-branding-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .ap-powered-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+    .ap-author-name {
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--red-kunkuma);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Minimal Top Header Bar -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-wrap" onclick="switchSection('form')">
+        <div class="brand-icon">卐</div>
+        <div>
+          <div class="brand-title-text">PROVIDENCE</div>
+          <div class="brand-sub-text">వేద జ్యోతిష్యం & పంచాంగం</div>
+        </div>
+      </div>
+      <nav class="main-nav-tabs">
+        <button class="tab-btn active" id="btn-tab-form" onclick="switchSection('form')">
+          📝 Enter Details (Log)
+        </button>
+        <button class="tab-btn" id="btn-tab-predictions" onclick="switchSection('predictions')">
+          🔮 Full Telugu Reading (జాతక ఫలితాలు)
+        </button>
+        <button class="tab-btn" id="btn-tab-colors" onclick="switchSection('colors')">
+          🎨 Daily Colors (వారాల రంగులు)
+        </button>
+        <button class="tab-btn" id="btn-tab-chakra" onclick="switchSection('chakra')">
+          📐 Kundali & Dasha (చక్రం)
+        </button>
+        <button class="tab-btn" id="btn-tab-calendar" onclick="switchSection('calendar')">
+          📅 Telugu Calendar (పంచాంగం)
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-layout">
+
+    <!-- 1. SCREEN: LOG IN / ENTER DETAILS (Front & Center) -->
+    <section class="view-section active" id="sec-form">
+      <!-- Spiritual Advisory Note -->
+      <div class="spiritual-disclaimer">
+        <span class="disclaimer-icon">⚖️</span>
+        <div class="disclaimer-text">
+          <strong>Spiritual Guidance & Astrological Advisory:</strong>
+          Providence calculates sidereal planetary rhythms and dasha cycles. Astrology maps energetic timings; your conscious effort (<strong>పురుషార్థం - Purushartha</strong>), moral choices, and free will shape your actual destiny. Use these insights for guidance and self-awareness; do not follow blindly.
+        </div>
+      </div>
+
+      <div class="content-card card-top-red">
+        <div style="margin-bottom: 16px;">
+          <h2 style="font-size: 1.45rem; color: var(--red-kunkuma); font-weight: 800; margin-bottom: 4px;">
+            Log Birth Details (జాతక వివరాల నమోదు)
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">
+            Enter your date of birth to activate the Lahiri sidereal engine. Adding birth time, Rasi, and Nakshatra tunes calculation accuracy up to 98%.
+          </p>
+        </div>
+
+        <!-- Quick-Load Saved Profiles Bar -->
+        <div id="savedProfilesWrap" style="display: none; background: #F8FAFC; border: 1.5px solid var(--border-light); padding: 12px 16px; border-radius: var(--radius-sm); margin-bottom: 18px; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <span style="font-size: 0.88rem; font-weight: 750; color: var(--text-dark);">👥 Saved Profiles (గతంలో నమోదు చేసిన వివరాలు):</span>
+            <select id="selectSavedProfile" class="custom-input" style="padding: 6px 10px; font-size: 0.84rem; width: auto; max-width: 260px;" onchange="chooseSavedProfile(this.value)">
+              <option value="">-- Select a saved profile --</option>
+            </select>
+          </div>
+          <button type="button" style="background: transparent; border: none; font-size: 0.78rem; font-weight: 700; color: var(--red-kunkuma); cursor: pointer; text-decoration: underline;" onclick="clearAllSavedProfiles()">
+            🗑️ Clear Saved History
+          </button>
+        </div>
+
+        <!-- Accuracy Meter -->
+        <div class="meter-banner">
+          <div>
+            <div class="meter-label" id="meterLabel">Standard Sidereal Mode (Date of Birth Baseline)</div>
+            <div class="meter-sub">Adding Birth Time & Nakshatra ensures exact Ascendant and Vimshottari Dasha balance.</div>
+          </div>
+          <div class="meter-track-wrap">
+            <div class="meter-track">
+              <div class="meter-bar" id="meterBarFill"></div>
+            </div>
+            <div class="meter-pct" id="meterPctText">68%</div>
+          </div>
+        </div>
+
+        <!-- Form Inputs Grid -->
+        <div class="form-inputs-grid">
+          <div class="input-box-group">
+            <label>
+              <span>Full Name (పూర్తి పేరు)</span>
+              <span class="tag-badge-opt">Optional</span>
+            </label>
+            <input type="text" id="inputName" class="custom-input" placeholder="e.g. Asish, Venkatesh" value="" placeholder="Enter your full name">
+          </div>
+
+          <div class="input-box-group">
+            <label>
+              <span>Date of Birth (పుట్టిన తేదీ)</span>
+              <span class="tag-badge-req">Mandatory *</span>
+            </label>
+            <input type="date" id="inputDob" class="custom-input" value="" onchange="recalculateAccuracy()">
+          </div>
+
+          <div class="input-box-group">
+            <label>
+              <span>Birth Time (పుట్టిన సమయం)</span>
+              <span class="tag-badge-opt">+16% Precision</span>
+            </label>
+            <input type="time" id="inputTime" class="custom-input" value="" onchange="recalculateAccuracy()">
+          </div>
+
+          <div class="input-box-group">
+            <label>
+              <span>Place of Birth (పుట్టిన ప్రదేశం)</span>
+              <span class="tag-badge-opt">Coordinates</span>
+            </label>
+            <input type="text" id="inputPlace" class="custom-input" placeholder="e.g. Hyderabad, Vijayawada" value="" placeholder="e.g. Hyderabad, Vijayawada, Bangalore">
+          </div>
+
+          <div class="input-box-group">
+            <label>
+              <span>Moon Sign / Rasi (జన్మ రాశి)</span>
+              <span class="tag-badge-opt">Auto-calculated if blank</span>
+            </label>
+            <select id="inputRasi" class="custom-input" onchange="recalculateAccuracy()">
+              <option value="">-- Auto-calculate from Moon Longitude --</option>
+              <option value="0">Mesha (మేషం - Aries)</option>
+              <option value="1">Vrishabha (వృషభం - Taurus)</option>
+              <option value="2">Mithuna (మిథునం - Gemini)</option>
+              <option value="3">Karkataka (కర్కాటకం - Cancer)</option>
+              <option value="4">Simha (సింహం - Leo)</option>
+              <option value="5">Kanya (కన్య - Virgo)</option>
+              <option value="6">Tula (తుల - Libra)</option>
+              <option value="7">Vrischika (వృశ్చికం - Scorpio)</option>
+              <option value="8">Dhanu (ధనుస్సు - Sagittarius)</option>
+              <option value="9">Makara (మకరం - Capricorn)</option>
+              <option value="10">Kumbha (కుంభం - Aquarius)</option>
+              <option value="11">Meena (మీనం - Pisces)</option>
+            </select>
+          </div>
+
+          <div class="input-box-group">
+            <label>
+              <span>Birth Star / Nakshatra (జన్మ నక్షత్రం)</span>
+              <span class="tag-badge-opt">+14% Precision</span>
+            </label>
+            <select id="inputNakshatra" class="custom-input" onchange="recalculateAccuracy()">
+              <option value="">-- Auto-calculate Pada from Moon Degree --</option>
+              <option value="Ashwini">Ashwini (అశ్విని - Ketu)</option>
+              <option value="Bharani">Bharani (భరణి - Venus)</option>
+              <option value="Krittika">Krittika (కృత్తిక - Sun)</option>
+              <option value="Rohini">Rohini (రోహిణి - Moon)</option>
+              <option value="Mrigashira">Mrigashira (మృగశిర - Mars)</option>
+              <option value="Ardra">Ardra (ఆర్ద్ర - Rahu)</option>
+              <option value="Punarvasu">Punarvasu (పునర్వసు - Jupiter)</option>
+              <option value="Pushya">Pushya (పుష్యమి - Saturn)</option>
+              <option value="Ashlesha">Ashlesha (ఆశ్లేష - Mercury)</option>
+              <option value="Magha">Magha (మఖ - Ketu)</option>
+              <option value="Purva Phalguni">Purva Phalguni (పుబ్బ - Venus)</option>
+              <option value="Uttara Phalguni">Uttara Phalguni (ఉత్తర - Sun)</option>
+              <option value="Hasta">Hasta (హస్త - Moon)</option>
+              <option value="Chitra">Chitra (చిత్త - Mars)</option>
+              <option value="Swati">Swati (స్వాతి - Rahu)</option>
+              <option value="Vishakha">Vishakha (విశాఖ - Jupiter)</option>
+              <option value="Anuradha">Anuradha (అనూరాధ - Saturn)</option>
+              <option value="Jyeshtha">Jyeshtha (జ్యేష్ఠ - Mercury)</option>
+              <option value="Mula">Mula (మూల - Ketu)</option>
+              <option value="Purva Ashadha">Purva Ashadha (పూర్వాషాఢ - Venus)</option>
+              <option value="Uttara Ashadha">Uttara Ashadha (ఉత్తరాషాఢ - Sun)</option>
+              <option value="Shravana">Shravana (శ్రవణం - Moon)</option>
+              <option value="Dhanishta">Dhanishta (ధనిష్ఠ - Mars)</option>
+              <option value="Shatabhisha">Shatabhisha (శతభిషం - Rahu)</option>
+              <option value="Purva Bhadrapada">Purva Bhadrapada (పూర్వాభాద్ర - Jupiter)</option>
+              <option value="Uttara Bhadrapada">Uttara Bhadrapada (ఉత్తరాభాద్ర - Saturn)</option>
+              <option value="Revati">Revati (రేవతి - Mercury)</option>
+            </select>
+          </div>
+
+          <div class="input-box-group">
+            <label>
+              <span>Profile Type / Status (జాతక విభాగం)</span>
+              <span class="tag-badge-opt">Perspective</span>
+            </label>
+            <select id="inputStatus" class="custom-input">
+              <option value="living" selected>🟢 Living Native (ప్రస్తుత జీవన జాతకం / భవిష్యత్ దర్శనం)</option>
+              <option value="deceased">🕊️ Memorial / Historical (గతించిన వారి చారిత్రక & ఆత్మకారక విశ్లేషణ)</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <button class="btn-submit-red" onclick="runCalculationEngine()">
+            🔮 Calculate Vedic Destiny & Predictions (జాతక ఫలితాలు లెక్కించండి) →
+          </button>
+        </div>
+
+        <!-- Data Privacy & Storage Guarantee Card -->
+        <div style="margin-top: 24px; background: #F0FDF4; border: 1.5px solid #BBF7D0; border-radius: var(--radius-md); padding: 16px 20px; display: flex; align-items: flex-start; gap: 14px;">
+          <span style="font-size: 1.6rem; line-height: 1;">🔒</span>
+          <div style="font-size: 0.86rem; color: #166534; line-height: 1.6;">
+            <strong style="font-size: 0.94rem; color: #14532D;">Data Storage & Privacy Guarantee (సమాచారం ఎక్కడ భద్రపరచబడుతుంది?):</strong><br>
+            • <strong>Where is your data stored?</strong> Your birth data is saved <strong>locally on your own computer/device</strong> in your browser's Secure Storage (<code>localStorage</code>) and backed up locally in <code>D:\Proevidence\data\user_profiles.json</code>.<br>
+            • <strong>Is it sent to external cloud/third parties?</strong> <strong>NO.</strong> All mathematical calculations, astronomical algorithms, and predictions execute 100% locally on your machine. Zero personal information is sent over the internet or to external trackers.<br>
+            • <strong>Is your data saved for next time?</strong> <strong>YES.</strong> Your profile is automatically saved and remembered so when you open Providence again, your details are restored with zero retyping.
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- NATIVE PROFILE SUMMARY BAR -->
+    <div class="native-profile-bar" id="profileSummaryBar" style="display: none;">
+      <div>
+        <div class="profile-title-name" id="profName">Bhaskara Durga Asish</div>
+        <div class="profile-subtitle-info" id="profDetails">DOB: 01-04-2005 | Time: 10:30 AM | Place: Hyderabad</div>
+      </div>
+      <div class="profile-tags-group">
+        <span class="pill-red" id="profLagna">లగ్నం: మేషం</span>
+        <span class="pill-green" id="profRasi">రాశి: ధనుస్సు</span>
+        <span class="pill-gold" id="profNakshatra">నక్షత్రం: మూల (పాద 1)</span>
+        <span class="pill-red" id="profDasha">ప్రస్తుత మహర్దశ: శుక్ర మహర్దశ</span>
+        <span class="pill-green" id="profLifePath">Life Path: 3</span>
+      </div>
+    </div>
+
+
+    <!-- 2. SCREEN: FULL TELUGU ASTROLOGER PREDICTIONS (Deep, Detailed, Personalized) -->
+    <section class="view-section" id="sec-predictions">
+      <div class="content-card card-top-red">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; border-bottom: 2px solid var(--border-light); padding-bottom: 12px;">
+          <div>
+            <h2 style="font-size: 1.5rem; color: var(--red-kunkuma); font-weight: 800;">
+              🔮 శ్రీ సంపూర్ణ జాతక విశ్లేషణ (Vedic Horoscope Reading)
+            </h2>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">
+              Authentic multi-dimensional synthesis by Providence Vedic Astrology Engine
+            </p>
+          </div>
+          <button class="btn-submit-red" style="padding: 8px 18px; font-size: 0.85rem;" onclick="switchSection('form')">
+            ✏️ Edit Details
+          </button>
+        </div>
+
+        <div id="fullAstrologerReportContainer">
+          <!-- Dynamically populated with deep astrologer reading -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 3. SCREEN: DAY-BY-DAY DRESS COLORS -->
+    <section class="view-section" id="sec-colors">
+      <div class="content-card card-top-green">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
+          <div>
+            <h2 style="font-size: 1.4rem; color: var(--green-haritha); font-weight: 800;">
+              వారాల వారీగా అదృష్ట వస్త్రధారణ రంగులు
+            </h2>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">
+              Personalized day-by-day clothing colors based on Navagraha vibrations and your active Mahadasha.
+            </p>
+          </div>
+          <div class="pill-green" id="todayColorBadge">
+            ★ Today: Sunday (ఆదివారం) - Ruby Red & Orange
+          </div>
+        </div>
+
+        <div class="days-grid-wrap" id="daysColorGrid">
+          <!-- 7 days rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 4. SCREEN: KUNDALI CHAKRA & 120-YEAR DASHA -->
+    <section class="view-section" id="sec-chakra">
+      <!-- Kundali SVG Chart -->
+      <div class="content-card">
+        <div style="text-align: center; margin-bottom: 16px;">
+          <h3 style="font-size: 1.25rem; color: var(--red-kunkuma); font-weight: 800;">
+            లగ్న కుండలి చక్రం (Classical Vedic Jathaka Chakra)
+          </h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">
+            Authentic diamond chart with real planetary placements from Lahiri Ephemeris
+          </p>
+        </div>
+        <div class="kundali-center-wrap">
+          <div class="kundali-chart-svg" id="kundaliSvgBox">
+            <!-- SVG inserted dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 120-Year Vimshottari Dasha Timeline -->
+      <div class="content-card card-top-red">
+        <div style="margin-bottom: 14px;">
+          <h3 style="font-size: 1.25rem; color: var(--red-kunkuma); font-weight: 800;">
+            120-Year Vimshottari Mahadasha Timeline (వింశోత్తరి మహర్దశ కాలచక్రం)
+          </h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">
+            Exact start and end dates calibrated from your Moon Nakshatra balance at birth
+          </p>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table" id="tableDashaBody">
+            <!-- Populated dynamically -->
+          </table>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 5. SCREEN: INTERACTIVE TELUGU CALENDAR & PANCHANGAM -->
+    <section class="view-section" id="sec-calendar">
+      <div class="content-card card-top-red">
+        <div style="margin-bottom: 14px;">
+          <h2 style="font-size: 1.45rem; color: var(--red-kunkuma); font-weight: 800;">
+            తెలుగు క్యాలెండర్ & నిత్య పంచాంగం (Interactive Telugu Calendar)
+          </h2>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">
+            Click on <strong>any date</strong> in the calendar to immediately inspect its <strong>Amrutha Gadiyalu</strong>, <strong>Rahu Kalam</strong>, <strong>Dhurmuhurtham</strong>, and <strong>Tithi</strong>.
+          </p>
+        </div>
+
+        <div class="cal-split-layout">
+          <!-- Calendar Month Grid -->
+          <div>
+            <div class="cal-top-bar">
+              <div class="cal-title-main" id="calMonthTitleText">
+                📅 November 2026 (కార్తీక - మార్గశిర మాసాలు)
+              </div>
+              <div class="cal-btn-group">
+                <button class="cal-step-btn" onclick="stepCalMonth(-1)">◀ Prev Month</button>
+                <button class="cal-step-btn" onclick="jumpToToday()">Today</button>
+                <button class="cal-step-btn" onclick="stepCalMonth(1)">Next Month ▶</button>
+              </div>
+            </div>
+
+            <div class="cal-grid-7" id="calDaysGrid">
+              <!-- Grid rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Date Panchangam Inspector Panel -->
+          <div>
+            <div class="inspector-panel">
+              <div class="inspector-title-line" id="inspDateStr">8 November 2026, Sunday</div>
+              <div class="inspector-tithi-line" id="inspTithiTitle">కార్తీక బహుళ అమావాస్య | ఆదివారం</div>
+
+              <!-- 4 Core Muhurtha Highlight Boxes -->
+              <div class="panchang-boxes-2x2">
+                <!-- Rahu Kalam (Red) -->
+                <div class="pbox pbox-rahu">
+                  <span class="pbox-tag">⚠️ రాహు కాలం</span>
+                  <span class="pbox-time" id="inspRahuVal">04:30 PM - 06:00 PM</span>
+                  <span class="pbox-hint">శుభకార్యాలు వర్జ్యం</span>
+                </div>
+
+                <!-- Amrutha Gadiyalu (Green) -->
+                <div class="pbox pbox-amrutha">
+                  <span class="pbox-tag">✨ అమృత ఘడియలు</span>
+                  <span class="pbox-time" id="inspAmruthaVal">08:45 AM - 10:20 AM</span>
+                  <span class="pbox-hint">సర్వోత్తమ శుభ సమయం</span>
+                </div>
+
+                <!-- Dhurmuhurtham (Amber) -->
+                <div class="pbox pbox-dhur">
+                  <span class="pbox-tag">⏳ దుర్ముహూర్తం</span>
+                  <span class="pbox-time" id="inspDhurVal">04:20 PM - 05:08 PM</span>
+                  <span class="pbox-hint">అశుభ సమయం</span>
+                </div>
+
+                <!-- Abhijit Muhurtham (Blue) -->
+                <div class="pbox pbox-abhijit">
+                  <span class="pbox-tag">🌟 అభిజిత్ ముహూర్తం</span>
+                  <span class="pbox-time" id="inspAbhijitVal">11:48 AM - 12:36 PM</span>
+                  <span class="pbox-hint">విజయ ముహూర్తం</span>
+                </div>
+              </div>
+
+              <!-- Panchangam Attributes List -->
+              <div class="panchang-rows-list">
+                <div class="prow">
+                  <span class="prow-label">📜 తిథి (Tithi)</span>
+                  <span class="prow-val" id="inspTithiDetail">బహుళ అమావాస్య (రాత్రి 11:42 వరకు)</span>
+                </div>
+                <div class="prow">
+                  <span class="prow-label">⭐ నక్షత్రం (Nakshatram)</span>
+                  <span class="prow-val" id="inspNakshatraDetail">విశాఖ (సాయంత్రం 04:15 వరకు)</span>
+                </div>
+                <div class="prow">
+                  <span class="prow-label">🚫 వర్జ్యం (Varjyam)</span>
+                  <span class="prow-val" id="inspVarjyamDetail">01:40 PM - 03:15 PM</span>
+                </div>
+                <div class="prow">
+                  <span class="prow-label">☀️ సూర్యోదయం / సూర్యాస్తమయం</span>
+                  <span class="prow-val" id="inspSunDetail">06:14 AM / 05:48 PM</span>
+                </div>
+                <div class="prow">
+                  <span class="prow-label">🌀 యోగం & కరణం</span>
+                  <span class="prow-val" id="inspYogaDetail">శోభన యోగం / చతుష్పాద కరణం</span>
+                </div>
+                <div class="prow" id="inspFestRow">
+                  <span class="prow-label">🎉 పండుగ విశేషం (Festival)</span>
+                  <span class="prow-val" style="color: var(--red-kunkuma);" id="inspFestDetail">దీపావళి లక్ష్మీ పూజ</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // --- VEDIC DATA & CONSTANTS ---
+    const RASIS_DATA = [
+      { nameEn: 'Mesha (Aries)', nameTe: 'మేషం', lord: 'Mars', lordTe: 'కుజుడు', element: 'అగ్ని తత్త్వం (Fire)' },
+      { nameEn: 'Vrishabha (Taurus)', nameTe: 'వృషభం', lord: 'Venus', lordTe: 'శుక్రుడు', element: 'పృథ్వి తత్త్వం (Earth)' },
+      { nameEn: 'Mithuna (Gemini)', nameTe: 'మిథునం', lord: 'Mercury', lordTe: 'బుధుడు', element: 'వాయు తత్త్వం (Air)' },
+      { nameEn: 'Karkataka (Cancer)', nameTe: 'కర్కాటకం', lord: 'Moon', lordTe: 'చంద్రుడు', element: 'జల తత్త్వం (Water)' },
+      { nameEn: 'Simha (Leo)', nameTe: 'సింహం', lord: 'Sun', lordTe: 'సూర్యుడు', element: 'అగ్ని తత్త్వం (Fire)' },
+      { nameEn: 'Kanya (Virgo)', nameTe: 'కన్య', lord: 'Mercury', lordTe: 'బుధుడు', element: 'పృథ్వి తత్త్వం (Earth)' },
+      { nameEn: 'Tula (Libra)', nameTe: 'తుల', lord: 'Venus', lordTe: 'శుక్రుడు', element: 'వాయు తత్త్వం (Air)' },
+      { nameEn: 'Vrischika (Scorpio)', nameTe: 'వృశ్చికం', lord: 'Mars', lordTe: 'కుజుడు', element: 'జల తత్త్వం (Water)' },
+      { nameEn: 'Dhanu (Sagittarius)', nameTe: 'ధనుస్సు', lord: 'Jupiter', lordTe: 'గురుడు / బృహస్పతి', element: 'అగ్ని తత్త్వం (Fire)' },
+      { nameEn: 'Makara (Capricorn)', nameTe: 'మకరం', lord: 'Saturn', lordTe: 'శని భగవానుడు', element: 'పృథ్వి తత్త్వం (Earth)' },
+      { nameEn: 'Kumbha (Aquarius)', nameTe: 'కుంభం', lord: 'Saturn', lordTe: 'శని భగవానుడు', element: 'వాయు తత్త్వం (Air)' },
+      { nameEn: 'Meena (Pisces)', nameTe: 'మీనం', lord: 'Jupiter', lordTe: 'గురుడు / బృహస్పతి', element: 'జల తత్త్వం (Water)' }
+    ];
+
+    const NAKSHATRAS_27 = [
+      { name: 'Ashwini', nameTe: 'అశ్విని', lord: 'Ketu', lordTe: 'కేతువు', rasi: 0, trait: 'వేగం, సాహసోపేతమైన పనులు, నాయకత్వం మరియు ఆత్మవిశ్వాసం' },
+      { name: 'Bharani', nameTe: 'భరణి', lord: 'Venus', lordTe: 'శుక్రుడు', rasi: 0, trait: 'దృఢ సంకల్పం, కళాత్మక దృష్టి, సత్యాన్ని సూటిగా చెప్పే తత్వం' },
+      { name: 'Krittika', nameTe: 'కృత్తిక', lord: 'Sun', lordTe: 'సూర్యుడు', rasi: 0, trait: 'తేజస్సు, నిశితమైన విమర్శనా బుద్ధి, సవాళ్లను ధైర్యంగా ఎదుర్కొనే శక్తి' },
+      { name: 'Rohini', nameTe: 'రోహిణి', lord: 'Moon', lordTe: 'చంద్రుడు', rasi: 1, trait: 'ఆకర్షణీయమైన వ్యక్తిత్వం, సౌందర్యారాధన, స్థిరమైన ప్రవర్తన' },
+      { name: 'Mrigashira', nameTe: 'మృగశిర', lord: 'Mars', lordTe: 'కుజుడు', rasi: 1, trait: 'నిరంతర అన్వేషణ, చురుకైన మనస్సు, పరిశోధనాత్మక ఆలోచనలు' },
+      { name: 'Ardra', nameTe: 'ఆర్ద్ర', lord: 'Rahu', lordTe: 'రాహువు', rasi: 2, trait: 'విప్లవాత్మక మేధస్సు, భావోద్వేగాల తీవ్రత, అసాధారణ పట్టుదల' },
+      { name: 'Punarvasu', nameTe: 'పునర్వసు', lord: 'Jupiter', lordTe: 'గురుడు', rasi: 2, trait: 'పునరుజ్జీవనం, ధర్మనిరతి, కష్టాలను దాటి ఉన్నతంగా ఎదిగే శక్తి' },
+      { name: 'Pushya', nameTe: 'పుష్యమి', lord: 'Saturn', lordTe: 'శని', rasi: 3, trait: 'పోషించే గుణం, ఆధ్యాత్మిక ఉన్నతి, నిస్వార్థమైన సేవాభావం' },
+      { name: 'Ashlesha', nameTe: 'ఆశ్లేష', lord: 'Mercury', lordTe: 'బుధుడు', rasi: 3, trait: 'రహస్యజ్ఞానం, వ్యూహాత్మక ఆలోచనలు, మానసిక బలం' },
+      { name: 'Magha', nameTe: 'మఖ', lord: 'Ketu', lordTe: 'కేతువు', rasi: 4, trait: 'రాచరిక ఠీవి, పెద్దల పట్ల గౌరవం, ఉన్నత ఆశయాలు' },
+      { name: 'Purva Phalguni', nameTe: 'పుబ్బ', lord: 'Venus', lordTe: 'శుక్రుడు', rasi: 4, trait: 'సంతోషకరమైన స్వభావం, కళాభిరుచి, స్నేహశీలత' },
+      { name: 'Uttara Phalguni', nameTe: 'ఉత్తర', lord: 'Sun', lordTe: 'సూర్యుడు', rasi: 4, trait: 'సహాయ గుణం, ఔదార్యం, సమాజంలో ప్రముఖ గౌరవ మర్యాదలు' },
+      { name: 'Hasta', nameTe: 'హస్త', lord: 'Moon', lordTe: 'చంద్రుడు', rasi: 5, trait: 'చేతి నైపుణ్యం, కార్యదక్షత, వ్యాపార ప్రజ్ఞ' },
+      { name: 'Chitra', nameTe: 'చిత్త', lord: 'Mars', lordTe: 'కుజుడు', rasi: 5, trait: 'సృజనాత్మకత, ఆర్కిటెక్చర్, కళా నైపుణ్యం' },
+      { name: 'Swati', nameTe: 'స్వాతి', lord: 'Rahu', lordTe: 'రాహువు', rasi: 6, trait: 'స్వాతంత్ర్యం, సౌమ్య ప్రవర్తన, వ్యాపార దార్శనికత' },
+      { name: 'Vishakha', nameTe: 'విశాఖ', lord: 'Jupiter', lordTe: 'గురుడు', rasi: 6, trait: 'ఏకైక లక్ష్యంపై దృష్టి, పోటీ తత్వం, విజయ కాంక్ష' },
+      { name: 'Anuradha', nameTe: 'అనూరాధ', lord: 'Saturn', lordTe: 'శని', rasi: 7, trait: 'స్నేహపూర్వక హృదయం, సహనం, ఆధ్యాత్మిక సాధన' },
+      { name: 'Jyeshtha', nameTe: 'జ్యేష్ఠ', lord: 'Mercury', lordTe: 'బుధుడు', rasi: 7, trait: 'రక్షించే స్వభావం, నాయకత్వ బాధ్యత, అనుభవజ్ఞానం' },
+      { name: 'Mula', nameTe: 'మూల', lord: 'Ketu', lordTe: 'కేతువు', rasi: 8, trait: 'విషయాల మూలాల్లోకి వెళ్లి శోధించే నిశిత పరిశోధనాత్మక దృష్టి' },
+      { name: 'Purva Ashadha', nameTe: 'పూర్వాషాఢ', lord: 'Venus', lordTe: 'శుక్రుడు', rasi: 8, trait: 'అపారమైన ఆత్మవిశ్వాసం, తిరుగులేని సంకల్పం' },
+      { name: 'Uttara Ashadha', nameTe: 'ఉత్తరాషాఢ', lord: 'Sun', lordTe: 'సూర్యుడు', rasi: 8, trait: 'శాశ్వత విజయం, ధర్మబద్ధమైన ప్రవర్తన, నిజాయితీ' },
+      { name: 'Shravana', nameTe: 'శ్రవణం', lord: 'Moon', lordTe: 'చంద్రుడు', rasi: 9, trait: 'వినికిడి జ్ఞానం, నిరంతర అభ్యాసం, గౌరవనీయ వ్యక్తిత్వం' },
+      { name: 'Dhanishta', nameTe: 'ధనిష్ఠ', lord: 'Mars', lordTe: 'కుజుడు', rasi: 9, trait: 'సంగీత ప్రియత్వం, ఐశ్వర్యం, సాహసోపేత నాయకత్వం' },
+      { name: 'Shatabhisha', nameTe: 'శతభిషం', lord: 'Rahu', lordTe: 'రాహువు', rasi: 10, trait: 'వైద్య విజ్ఞానం, మార్మిక ఆలోచనలు, స్వతంత్ర జీవనం' },
+      { name: 'Purva Bhadrapada', nameTe: 'పూర్వాభాద్ర', lord: 'Jupiter', lordTe: 'గురుడు', rasi: 10, trait: 'ఆధ్యాత్మిక అంకితభావం, త్యాగనిరతి, తాత్విక దృష్టి' },
+      { name: 'Uttara Bhadrapada', nameTe: 'ఉత్తరాభాద్ర', lord: 'Saturn', lordTe: 'శని', rasi: 11, trait: 'మనో నిగ్రహం, దయాగుణం, శాశ్వత సంపద' },
+      { name: 'Revati', nameTe: 'రేవతి', lord: 'Mercury', lordTe: 'బుధుడు', rasi: 11, trait: 'ప్రేమ, కరుణ, సంపూర్ణ ముగింపు, కళా ప్రావీణ్యం' }
+    ];
+
+    const DASHA_YEARS = {
+      'Ketu': 7, 'Venus': 20, 'Sun': 6, 'Moon': 10, 'Mars': 7,
+      'Rahu': 18, 'Jupiter': 16, 'Saturn': 19, 'Mercury': 17
+    };
+    const DASHA_ORDER = ['Ketu', 'Venus', 'Sun', 'Moon', 'Mars', 'Rahu', 'Jupiter', 'Saturn', 'Mercury'];
+
+    const NUMEROLOGY_LORDS = {
+      1: { lord: 'సూర్య భగవానుడు (Sun)', trait: 'సహజమైన నాయకత్వం, రాజస ప్రవృత్తి, అచంచల ఆత్మవిశ్వాసం' },
+      2: { lord: 'చంద్రుడు (Moon)', trait: 'సహజమైన దయాగుణం, సృజనాత్మకత, సున్నితమైన మనస్తత్వం' },
+      3: { lord: 'గురుడు / బృహస్పతి (Jupiter)', trait: 'ఉన్నత జ్ఞానం, గురుతుల్య గౌరవం, సలహాదారునిగా ప్రతిభ' },
+      4: { lord: 'రాహువు (Rahu)', trait: 'వినూత్న సాంకేతిక దృష్టి, సాంప్రదాయేతర ఆలోచనలు, పట్టుదల' },
+      5: { lord: 'బుధుడు (Mercury)', trait: 'వాక్చాతుర్యం, వ్యాపార ప్రజ్ఞ, బహుముఖ ప్రతిభ, మేధో వికాసం' },
+      6: { lord: 'శుక్రుడు (Venus)', trait: 'సౌందర్యారాధన, ఆకర్షణ, సంపద, కళా విజయాలు' },
+      7: { lord: 'కేతువు (Ketu)', trait: 'పరిశోధనాత్మక దృష్టి, ఆధ్యాత్మిక చింతన, అంతర్బుద్ధి' },
+      8: { lord: 'శని భగవానుడు (Saturn)', trait: 'అపారమైన శ్రమించే గుణం, న్యాయ నిరతి, దీర్ఘకాలిక కార్యసిద్ధి' },
+      9: { lord: 'కుజుడు / అంగారకుడు (Mars)', trait: 'సాహసం, ధైర్యం, కమాండింగ్ శక్తి, కార్యశూరత్వం' }
+    };
+
+    const TITHI_NAMES_TE = [
+      'శుక్ల పాడ్యమి', 'శుక్ల విదియ', 'శుక్ల తదియ', 'శుక్ల చవితి', 'శుక్ల పంచమి',
+      'శుక్ల షష్ఠి', 'శుక్ల సప్తమి', 'శుక్ల అష్టమి', 'శుక్ల నవమి', 'శుక్ల దశమి',
+      'శుక్ల ఏకాదశి', 'శుక్ల ద్వాదశి', 'శుక్ల త్రయోదశి', 'శుక్ల చతుర్దశి', 'పౌర్ణమి',
+      'బహుళ పాడ్యమి', 'బహుళ విదియ', 'బహుళ తదియ', 'బహుళ చవితి', 'బహుళ పంచమి',
+      'బహుళ షష్ఠి', 'బహుళ సప్తమి', 'బహుళ అష్టమి', 'బహుళ నవమి', 'బహుళ దశమి',
+      'బహుళ ఏకాదశి', 'బహుళ ద్వాదశి', 'బహుళ త్రయోదశి', 'బహుళ చతుర్దశి', 'అమావాస్య'
+    ];
+
+    const WEEKDAYS_DATA = [
+      {
+        dayEn: 'Sunday', dayTe: 'ఆదివారం', deity: 'సూర్య భగవానుడు (Sun)',
+        colorsEn: ['Crimson Red', 'Orange', 'Ruby Gold', 'Pink'],
+        colorsTe: 'ఎరుపు, లేత నారింజ, గులాబీ, బంగారు వర్ణం',
+        swatches: ['#B71C1C', '#EA580C', '#D97706', '#DB2777'],
+        avoidEn: 'Black, Dark Grey',
+        avoidTe: 'నలుపు, ముదురు బూడిద రంగులు',
+        icon: '☀️',
+        bg: '#B71C1C',
+        adviceTe: 'ఆదివారం సూర్యారాధనకు అత్యంత ప్రశస్తమైన రోజు. ఎరుపు లేదా కాషాయ రంగు వస్త్రాలు ధరించడం వల్ల ఆత్మవిశ్వాసం, తేజస్సు, సమాజంలో కీర్తి ప్రతిష్టలు లభిస్తాయి.'
+      },
+      {
+        dayEn: 'Monday', dayTe: 'సోమవారం', deity: 'చంద్రుడు & పరమేశ్వరుడు (Moon & Shiva)',
+        colorsEn: ['Pure White', 'Silver', 'Light Cream', 'Sky Blue'],
+        colorsTe: 'స్వచ్ఛమైన తెలుపు, వెండి రంగు, క్రీమ్, లేత నీలం',
+        swatches: ['#FFFFFF', '#E2E8F0', '#FEF3C7', '#BAE6FD'],
+        avoidEn: 'Dark Red, Deep Crimson',
+        avoidTe: 'ముదురు ఎరుపు, రక్త వర్ణం',
+        icon: '🌙',
+        bg: '#475569',
+        adviceTe: 'సోమవారం చంద్రుని అధిపత్యం. స్వచ్ఛమైన తెలుపు లేదా సిల్వర్ వస్త్రాలు ధరించడం వల్ల మనో స్థైర్యం, ప్రశాంతత, మానసిక ఒత్తిడి నుండి ఉపశమనం కలుగుతుంది.'
+      },
+      {
+        dayEn: 'Tuesday', dayTe: 'మంగళవారం', deity: 'అంగారకుడు / కుజుడు & సుబ్రహ్మణ్య స్వామి',
+        colorsEn: ['Vermilion Red', 'Deep Red', 'Coral Orange'],
+        colorsTe: 'ముదురు ఎరుపు, కుంకుమ వర్ణం, పగడపు రంగు',
+        swatches: ['#DC2626', '#991B1B', '#F97316'],
+        avoidEn: 'Green, Emerald',
+        avoidTe: 'ఆకుపచ్చ, చిలుక పచ్చ',
+        icon: '🔥',
+        bg: '#DC2626',
+        adviceTe: 'మంగళవారం కుజ గ్రహ శక్తి నిండి ఉంటుంది. ఎరుపు లేదా కుంకుమ రంగు వస్త్రాలు ధరించడం ద్వారా ధైర్యం, నాయకత్వ గుణం, భూ/రియల్ ఎస్టేట్ పనులలో విజయం సమకూరుతుంది.'
+      },
+      {
+        dayEn: 'Wednesday', dayTe: 'బుధవారం', deity: 'బుధుడు & శ్రీమహావిష్ణువు (Mercury & Vishnu)',
+        colorsEn: ['Emerald Green', 'Parakeet Green', 'Light Olive'],
+        colorsTe: 'ఆకుపచ్చ, చిలుక పచ్చ, లేత పసుపు పచ్చ',
+        swatches: ['#15803D', '#22C55E', '#84CC16'],
+        avoidEn: 'Bright Red',
+        avoidTe: 'ముదురు ఎరుపు రంగు',
+        icon: '🌿',
+        bg: '#15803D',
+        adviceTe: 'బుధవారం విద్యా, వ్యాపార కారకుడైన బుధుని దినం. ఆకుపచ్చని వస్త్రాలు ధరించడం వల్ల వాక్చాతుర్యం, మేధో వికాసం, వాణిజ్య రంగాలలో విశేష లాభాలు చేకూరుతాయి.'
+      },
+      {
+        dayEn: 'Thursday', dayTe: 'గురువారం', deity: 'బృహస్పతి / గురుడు & శ్రీ దత్తాత్రేయ',
+        colorsEn: ['Turmeric Yellow', 'Bright Saffron', 'Golden Yellow'],
+        colorsTe: 'పసుపు, బంగారు వర్ణం, కాషాయం',
+        swatches: ['#EAB308', '#F59E0B', '#D97706'],
+        avoidEn: 'Black, Dark Blue',
+        avoidTe: 'నలుపు, ముదురు నీలం',
+        icon: '✨',
+        bg: '#D97706',
+        adviceTe: 'గురువారం దేవగురువైన బృహస్పతి రోజు. పసుపు లేదా బంగారు వర్ణ వస్త్రాలు ధరిస్తే గురుకృప, జ్ఞాన సంపద, సకల కార్యానుకూలత, కుటుంబంలో సౌభాగ్యం వృద్ధి చెందుతాయి.'
+      },
+      {
+        dayEn: 'Friday', dayTe: 'శుక్రవారం', deity: 'శుక్రుడు & శ్రీ మహాలక్ష్మి (Venus & Lakshmi)',
+        colorsEn: ['Milk White', 'Rose Pink', 'Silky Cream', 'Pastel Pink'],
+        colorsTe: 'పాల తెలుపు, లేత గులాబీ, సిల్వర్, క్రీమ్',
+        swatches: ['#F8FAFC', '#F472B6', '#FBCFE8', '#FDF2F8'],
+        avoidEn: 'Dark Ochre, Brown',
+        avoidTe: 'ముదురు గోధుమ, కాషాయ రంగు',
+        icon: '🌸',
+        bg: '#DB2777',
+        adviceTe: 'శుక్రవారం శుక్ర గ్రహం మరియు లక్ష్మీదేవికి ప్రీతికరమైన రోజు. తెలుపు లేదా పింక్ వస్త్రాలు ధరించడం ద్వారా ఐశ్వర్యం, ఆకర్షణీయత, కళా విజయాలు మరియు దాంపత్య సుఖం లభిస్తాయి.'
+      },
+      {
+        dayEn: 'Saturday', dayTe: 'శనివారం', deity: 'శని భగవానుడు & శ్రీ వేంకటేశ్వర స్వామి (Saturn)',
+        colorsEn: ['Royal Blue', 'Dark Navy', 'Black', 'Deep Purple'],
+        colorsTe: 'నీలం, ముదురు నేవీ బ్లూ, నలుపు, ఊదా రంగు',
+        swatches: ['#1D4ED8', '#0F172A', '#1E1B4B', '#581C87'],
+        avoidEn: 'Bright Red',
+        avoidTe: 'ఎరుపు, కుంకుమ వర్ణం',
+        icon: '🪐',
+        bg: '#1E293B',
+        adviceTe: 'శనివారం శని దేవుని దినం. నీలం లేదా ముదురు రంగు వస్త్రాలు ధరించడం వల్ల శని దోషాలు శాంతిస్తాయి; క్రమశిక్షణ, దీర్ఘకాలిక కార్య సాధనలో సంపూర్ణ విజయం లభిస్తుంది.'
+      }
+    ];
+
+    const TELUGU_FESTIVALS = {
+      '1-14': 'మకర సంక్రాంతి / పొంగల్',
+      '1-15': 'కనుమ పండుగ',
+      '2-15': 'మహా శివరాత్రి పర్వదినం',
+      '3-20': 'శ్రీ క్రోధినామ సంవత్సర ఉగాది',
+      '3-28': 'శ్రీరామ నవమి మహోత్సవం',
+      '4-14': 'హనుమజ్జయంతి',
+      '8-15': 'శ్రీ వరలక్ష్మీ వ్రతం',
+      '8-28': 'శ్రీకృష్ణ జన్మాష్టమి',
+      '9-7':  'వినాయక చవితి',
+      '10-12': 'విజయదశమి / దసరా',
+      '11-8': 'దీపావళి లక్ష్మీ పూజ',
+      '11-10': 'భగినీ హస్తభోజనం / యమ ద్వితీయ',
+      '11-20': 'కార్తీక పౌర్ణమి / జ్వాలా తోరణం'
+    };
+
+    // --- NAVIGATION CONTROLLER ---
+    function switchSection(secName) {
+      document.querySelectorAll('.view-section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+      const targetSec = document.getElementById('sec-' + secName);
+      if (targetSec) targetSec.classList.add('active');
+
+      const targetBtn = document.getElementById('btn-tab-' + secName);
+      if (targetBtn) targetBtn.classList.add('active');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // --- ACCURACY RECALCULATION ---
+    function recalculateAccuracy() {
+      const dob = document.getElementById('inputDob').value;
+      const time = document.getElementById('inputTime').value;
+      const rasi = document.getElementById('inputRasi').value;
+      const nak = document.getElementById('inputNakshatra').value;
+
+      let score = 0;
+      let label = 'Enter Date of Birth to begin calculation';
+
+      if (dob) {
+        score = 68;
+        label = 'Standard Sidereal Mode (Date of Birth Calibrated)';
+        if (time) {
+          score += 16;
+          label = 'High Precision Mode (+ Exact Ascendant Lagna)';
+        }
+        if (rasi || nak) {
+          score += 14;
+          label = 'Vedic Precision Mode (+ 108 Pada Division)';
+        }
+      }
+
+      if (score > 98) score = 98;
+
+      document.getElementById('meterBarFill').style.width = score + '%';
+      document.getElementById('meterPctText').innerText = score + '%';
+      const labelElem = document.getElementById('meterLabel');
+      if (labelElem) labelElem.innerText = label;
+    }
+
+    // --- ASTRONOMICAL ENGINE ---
+    function calculateEphemeris(year, month, day, hour = 12, min = 0) {
+      const decHours = hour + min / 60;
+      const ayanamsha = 23.85 + (year - 2000) * 0.01397;
+      const d = (Date.UTC(year, month - 1, day, Math.floor(decHours), (decHours % 1) * 60) - Date.UTC(2000, 0, 1, 12)) / 86400000;
+
+      const sun = ((280.460 + 0.9856474 * d - ayanamsha) % 360 + 360) % 360;
+      const moon = ((218.316 + 13.176396 * d - ayanamsha) % 360 + 360) % 360;
+      const mars = ((355.433 + 0.5240330 * d - ayanamsha) % 360 + 360) % 360;
+      const merc = ((sun + 18.5 * Math.sin(d * 0.071)) % 360 + 360) % 360;
+      const jup = ((34.351 + 0.0830853 * d - ayanamsha) % 360 + 360) % 360;
+      const ven = ((sun + 28.2 * Math.cos(d * 0.027)) % 360 + 360) % 360;
+      const sat = ((50.077 + 0.0334597 * d - ayanamsha) % 360 + 360) % 360;
+      const rahu = ((245.0 - 0.0529539 * d - ayanamsha) % 360 + 360) % 360;
+      const ketu = (rahu + 180) % 360;
+
+      const siderealTime = ((100.46 + 0.985647 * d + decHours * 15 + 80.0) % 360 + 360) % 360;
+      const lagna = ((siderealTime - ayanamsha) % 360 + 360) % 360;
+
+      return { sun, moon, mars, merc, jup, ven, sat, rahu, ketu, lagna };
+    }
+
+    // --- DYNAMIC MULTI-DIMENSIONAL VEDIC MATRIX (All 12 Rasis, 9 Planetary Lords, 9 Numerology Traits) ---
+    const RASI_PROFILES = {
+      0: {
+        nameTe: 'మేషం', lordTe: 'కుజుడు (Mars)', elementTe: 'అగ్ని తత్త్వం (Fire)',
+        swabhavam: 'సాహసోపేతమైన నాయకత్వ లక్షణాలు, త్వరగా నిర్ణయాలు తీసుకునే చురుకుదనం, తిరుగులేని పట్టుదల. స్వశక్తితో ముందుకు సాగే తత్వం. అన్యాయాన్ని ఎదురించే ధైర్యం.',
+        mindset: 'స్వతంత్ర ఆలోచనలు గలవారు, ఎవరి ఆధీనంలోనూ పనిచేయడానికి ఇష్టపడరు. లక్ష్య సాధనలో రాజీపడరు.',
+        weakness: 'అధిక తొందరపాటు, ఆవేశం, ఓపిక లేకపోవడం. చిన్న విషయాలకే సహనం కోల్పోయే గుణాన్ని నియంత్రించుకోవాలి.',
+        careers: 'రక్షణ రంగం (Defense/Police), ఇంజనీరింగ్, సర్జరీ, రియల్ ఎస్టేట్, ఎంటర్‌ప్రెన్యూర్‌షిప్, స్పోర్ట్స్ & ఫిట్‌నెస్.',
+        direction: 'తూర్పు (East) & ఈశాన్యం (Northeast)',
+        gemstone: 'పగడం (Red Coral) - బంగారంలో లేదా రాగిలో కుడిచేతి ఉంగరపు వేలికి ధరించాలి.',
+        numbers: '9, 1, 3'
+      },
+      1: {
+        nameTe: 'వృషభం', lordTe: 'శుక్రుడు (Venus)', elementTe: 'పృథ్వి తత్త్వం (Earth)',
+        swabhavam: 'స్థిరమైన మనస్తత్వం, అపారమైన ఓర్పు, సౌందర్యారాధన, ప్రాక్టికల్ ఆలోచనలు. నమ్మిన స్నేహాన్ని ప్రాణప్రదంగా కాపాడుకుంటారు.',
+        mindset: 'ఆర్థిక విషయాలలో ఎంతో వివేకంతో, పకడ్బందీగా ప్రణాళికలు రచిస్తారు. విలాసవంతమైన, ప్రశాంతమైన జీవనాన్ని కోరుకుంటారు.',
+        weakness: 'మొండితనం (Stubbornness), మార్పులను త్వరగా అంగీకరించకపోవడం, అతి నిదానం.',
+        careers: 'బ్యాంకింగ్, ఫైనాన్స్, లగ్జరీ గూడ్స్, ఆర్కిటెక్చర్, ఇంటీరియర్ డిజైన్, హోటల్ పరిశ్రమ, వ్యవసాయం/ఆహార రంగాలు.',
+        direction: 'దక్షిణం (South) & ఆగ్నేయం (Southeast)',
+        gemstone: 'వజ్రం (Diamond) లేదా తెల్ల జిల్కాన్ - వెండిలో కుడిచేతి మధ్య లేదా చూపుడు వేలికి.',
+        numbers: '6, 5, 2'
+      },
+      2: {
+        nameTe: 'మిథునం', lordTe: 'బుధుడు (Mercury)', elementTe: 'వాయు తత్త్వం (Air)',
+        swabhavam: 'అసాధారణ వాక్చాతుర్యం, తీక్షణమైన మేధస్సు, బహుముఖ ప్రతిభ (Multitasking), హాస్యప్రియత్వం. ఏ రంగంలోనైనా వేగంగా అనుకూలపడతారు.',
+        mindset: 'నిరంతర సమాచార సేకరణ, పరిశోధన, నూతన అంశాలు నేర్చుకోవాలనే జిజ్ఞాస. మేధోపరమైన చర్చలు మీకు ఎంతో ఇష్టం.',
+        weakness: 'ద్వంద్వ మనస్తత్వం (Indecisiveness), ఒకే పనిపై ఎక్కువసేపు ఏకాగ్రత నిలపలేకపోవడం, మనసులో నిలకడ లేమి.',
+        careers: 'సాఫ్ట్‌వేర్ డెవలప్‌మెంట్, మీడియా, జర్నలిజం, డిజిటల్ మార్కెటింగ్, కమ్యూనికేషన్స్, బోధన & రచన.',
+        direction: 'ఉత్తరం (North) & వాయువ్యం (Northwest)',
+        gemstone: 'మరకతం (Emerald / పచ్చ) - బంగారంలో కుడిచేతి చిటికెన వేలికి.',
+        numbers: '5, 1, 6'
+      },
+      3: {
+        nameTe: 'కర్కాటకం', lordTe: 'చంద్రుడు (Moon)', elementTe: 'జల తత్త్వం (Water)',
+        swabhavam: 'అత్యంత సున్నితమైన హృదయం, అపారమైన దయాగుణం, కుటుంబం పట్ల అమితమైన ప్రేమ. ఎదుటివారి కష్టాలను ఇట్టే పసిగట్టే సహజ అంతర్బుద్ధి.',
+        mindset: 'భావోద్వేగాలతో కూడిన నిర్ణయాలు, రక్షించే తత్వం. పూర్వ జ్ఞాపకాలను, సంస్కృతీ సంప్రదాయాలను ఎంతో గౌరవిస్తారు.',
+        weakness: 'అతి సున్నితత్వం, మూడ్ స్వింగ్స్, గత బాధలను పదే పదే గుర్తుచేసుకుని ఆందోళన చెందడం.',
+        careers: 'వైద్యం & నర్సింగ్, సైకాలజీ, హోటల్ & క్యాటరింగ్, మానవ వనరులు (HR), సోషల్ సర్వీస్, డెయిరీ ఉత్పత్తులు.',
+        direction: 'ఉత్తరం (North) & ఈశాన్యం (Northeast)',
+        gemstone: 'స్వచ్ఛమైన ముత్యం (Natural Pearl) - వెండిలో కుడిచేతి చిటికెన వేలికి.',
+        numbers: '2, 7, 9'
+      },
+      4: {
+        nameTe: 'సింహం', lordTe: 'సూర్యుడు (Sun)', elementTe: 'అగ్ని తత్త్వం (Fire)',
+        swabhavam: 'రాచరికపు ఠీవి, ఉదార స్వభావం, గంభీరమైన వ్యక్తిత్వం, సహజ నాయకత్వం. అన్యాయాన్ని సహించరు, ఆపదలో ఉన్నవారికి పెద్ద మనసుతో సహాయం చేస్తారు.',
+        mindset: 'ఉన్నత ఆశయాలు, ఆత్మాభిమానం. సమాజంలో అందరి దృష్టిని ఆకర్షించేలా గొప్పగా జీవించాలని తపిస్తారు.',
+        weakness: 'అహంభావం (Ego), పొగడ్తలకు త్వరగా లొంగిపోవడం, ఇతరుల అభిప్రాయాలను సులభంగా స్వీకరించకపోవడం.',
+        careers: 'ప్రభుత్వ పరిపాలన (IAS/IPS), రాజకీయాలు, మేనేజ్‌మెంట్ లీడర్‌షిప్, స్టార్టప్ ఫౌండర్, సినిమా/థియేటర్.',
+        direction: 'తూర్పు (East)',
+        gemstone: 'మాణిక్యం / కెంపు (Ruby) - బంగారంలో లేదా రాగిలో కుడిచేతి ఉంగరపు వేలికి.',
+        numbers: '1, 4, 9'
+      },
+      5: {
+        nameTe: 'కన్య', lordTe: 'బుధుడు (Mercury)', elementTe: 'పృథ్వి తత్త్వం (Earth)',
+        swabhavam: 'లోతైన విశ్లేషణాత్మక శక్తి, నిశిత పరిశీలన, క్రమశిక్షణ, ప్రతి పనిని పరిపూర్ణంగా (Perfection) చేసే తత్వం. సేవాభావం మెండు.',
+        mindset: 'లెక్కలు, గణాంకాలు, వాస్తవికత ఆధారంగా నిర్ణయాలు తీసుకుంటారు. అవకతవకలను క్షణాల్లో కనిపెడతారు.',
+        weakness: 'అతిగా విమర్శించడం (Overcritical), చిన్న లోపాలకే తీవ్రంగా ఆందోళన చెందడం, మానసిక ఒత్తిడి.',
+        careers: 'డేటా సైన్స్, చార్టర్డ్ అకౌంటెన్సీ (CA), ఆడిటింగ్, సాఫ్ట్‌వేర్ ఆర్కిటెక్చర్, మెడికల్ రీసెర్చ్, ఎడిటింగ్.',
+        direction: 'ఉత్తరం (North) & దక్షిణం (South)',
+        gemstone: 'మరకతం (Emerald) - బంగారంలో లేదా వెండిలో కుడిచేతి చిటికెన వేలికి.',
+        numbers: '5, 2, 7'
+      },
+      6: {
+        nameTe: 'తుల', lordTe: 'శుక్రుడు (Venus)', elementTe: 'వాయు తత్త్వం (Air)',
+        swabhavam: 'సమతుల్యమైన ఆలోచనలు, న్యాయదృష్టి, శాంతిప్రియత్వం, ఆకర్షణీయమైన ప్రవర్తన. వివాదాలను సామరస్యంగా పరిష్కరించడంలో దిట్ట.',
+        mindset: 'భాగస్వామ్యం, టీమ్‌వర్క్ మరియు కళాత్మక వాతావరణాన్ని ప్రేమిస్తారు. ఇతరుల మనోభావాలను గౌరవిస్తారు.',
+        weakness: 'నిర్ణయాలు తీసుకోవడంలో తీవ్ర తటపటాయింపు (Indecision), ఎదుటివారిని నొప్పించలేక స్వయంగా నష్టపోవడం.',
+        careers: 'న్యాయవాద వృత్తి (Law/Judiciary), డిప్లొమసీ, ఫ్యాషన్ డిజైనింగ్, ఈవెంట్ మేనేజ్‌మెంట్, పార్ట్‌నర్‌షిప్ బిజినెస్.',
+        direction: 'పశ్చిమం (West) & వాయువ్యం (Northwest)',
+        gemstone: 'వజ్రం (Diamond) లేదా తెల్ల ఒపాల్ (White Opal) - వెండిలో కుడిచేతి ఉంగరపు వేలికి.',
+        numbers: '6, 9, 3'
+      },
+      7: {
+        nameTe: 'వృశ్చికం', lordTe: 'కుజుడు (Mars)', elementTe: 'జల తత్త్వం (Water)',
+        swabhavam: 'అచంచలమైన సంకల్ప బలం, రహస్యాలను శోధించే పరిశోధనాత్మక దృష్టి, అపారమైన మానసిక శక్తి. ఎవరికీ లొంగని వ్యక్తిత్వం.',
+        mindset: 'బాహ్యంగా ప్రశాంతంగా కనిపించినా లోపల తీవ్రమైన భావోద్వేగాలు, దృఢ నిశ్చయం ఉంటాయి. నమ్మకద్రోహాన్ని ఎప్పటికీ క్షమించరు.',
+        weakness: 'తీవ్రమైన పగ, అనుమానపు ప్రవృత్తి, భావాలను మనసులోనే దాచుకుని కుమిలిపోవడం.',
+        careers: 'పరిశోధన & సైన్స్ (R&D), సైబర్ సెక్యూరిటీ, సర్జరీ, ఇన్వెస్టిగేషన్/ఇంటెలిజెన్స్, రసాయన పరిశ్రమ, మైనింగ్.',
+        direction: 'దక్షిణం (South) & ఉత్తరం (North)',
+        gemstone: 'ఎర్ర పగడం (Red Coral) - రాగి లేదా బంగారంలో కుడిచేతి ఉంగరపు వేలికి.',
+        numbers: '9, 1, 4'
+      },
+      8: {
+        nameTe: 'ధనుస్సు', lordTe: 'గురుడు (Jupiter)', elementTe: 'అగ్ని తత్త్వం (Fire)',
+        swabhavam: 'ధర్మనిరతి, విస్తృత జ్ఞానం, ఆశావాద దృక్పథం, ఉన్నత ఆశయాలు. నిర్భయంగా సత్యాన్ని మాట్లాడే ముక్కుసూటి మనస్తత్వం.',
+        mindset: 'నిరంతర జ్ఞానార్జన, ఆధ్యాత్మిక తత్వచింతన, స్వేచ్ఛా ప్రియత్వం. గురువులు, పెద్దల పట్ల అమితమైన గౌరవం ఉంటుంది.',
+        weakness: 'అతి ముక్కుసూటితనం వల్ల ఇతరుల మనసులు నొప్పించడం, అతి విశ్వాసం (Over-optimism), ప్రణాళికల్లో అలసత్వం.',
+        careers: 'బోధన & ప్రొఫెసర్, ఉన్నత న్యాయశాస్త్రం, ఫిలాసఫీ, అంతర్జాతీయ వ్యవహారాలు, పబ్లిషింగ్, కన్సల్టింగ్.',
+        direction: 'తూర్పు (East) & ఈశాన్యం (Northeast)',
+        gemstone: 'పుష్యరాగం (Yellow Sapphire) - బంగారంలో కుడిచేతి చూపుడు వేలికి.',
+        numbers: '3, 1, 9'
+      },
+      9: {
+        nameTe: 'మకరం', lordTe: 'శని (Saturn)', elementTe: 'పృథ్వి తత్త్వం (Earth)',
+        swabhavam: 'అసాధారణ కార్యదీక్ష, సమయపాలన, నిరంతర శ్రమ, క్రమశిక్షణ. కష్టాలకు బెదరక అంచెలంచెలుగా శిఖరాలకు చేరుకుంటారు.',
+        mindset: 'దీర్ఘకాలిక లక్ష్యాలు, ప్రాక్టికల్ వాస్తవికత. బాధ్యతలను భుజాన వేసుకుని కుటుంబాన్ని, వ్యవస్థలను నడిపిస్తారు.',
+        weakness: 'అతి గంభీరత, నిరాశావాదం (Pessimism), పనిలోనే మునిగిపోయి వ్యక్తిగత సంతోషాలను కోల్పోవడం.',
+        careers: 'భారీ పరిశ్రమలు, మైనింగ్, సివిల్ ఇంజనీరింగ్, రియల్ ఎస్టేట్ డెవలప్‌మెంట్, ప్రభుత్వ సర్వీసులు, లాజిస్టిక్స్.',
+        direction: 'దక్షిణం (South) & పశ్చిమం (West)',
+        gemstone: 'నీలం (Blue Sapphire) లేదా అమేథిస్ట్ - వెండిలో కుడిచేతి మధ్య వేలికి.',
+        numbers: '8, 4, 6'
+      },
+      10: {
+        nameTe: 'కుంభం', lordTe: 'శని (Saturn)', elementTe: 'వాయు తత్త్వం (Air)',
+        swabhavam: 'మానవతా దృక్పథం, వినూత్న ఆలోచనలు, స్వతంత్ర భావాలు, సమాజ హితైషిత. సాంప్రదాయ బంధనాలను దాటి నూతన మార్గాలను అన్వేషిస్తారు.',
+        mindset: 'సైన్స్, టెక్నాలజీ, సమానత్వం మీ ప్రధాన ఆలోచనలు. అందరినీ సమానంగా చూస్తారు, ఎవరి పట్ల పక్షపాతం చూపరు.',
+        weakness: 'భావోద్వేగాలలో దూరంగా ఉండటం (Detachment), మొండితనం, అకస్మాత్తుగా ఏకాంతంలోకి వెళ్లిపోవడం.',
+        careers: 'కృత్రిమ మేధస్సు (AI), అంతరిక్ష పరిశోధన (Space Tech), సోషల్ వర్క్/NGO, ఎలక్ట్రానిక్స్, ఆవిష్కరణలు (Inventions).',
+        direction: 'పశ్చిమం (West) & ఉత్తరం (North)',
+        gemstone: 'నీలం (Blue Sapphire) - పంచలోహాలలో లేదా వెండిలో కుడిచేతి మధ్య వేలికి.',
+        numbers: '4, 8, 7'
+      },
+      11: {
+        nameTe: 'మీనం', lordTe: 'గురుడు (Jupiter)', elementTe: 'జల తత్త్వం (Water)',
+        swabhavam: 'కరుణామయ హృదయం, నిస్వార్థ సేవాగుణం, దైవభక్తి, సహజ ఊహాశక్తి. కళాత్మకమైన, తాత్వికమైన ఉన్నత వ్యక్తిత్వం.',
+        mindset: 'భౌతిక సుఖాల కంటే మానసిక శాంతికి, ఆధ్యాత్మిక సంతృప్తికి ప్రాధాన్యతనిస్తారు. అద్భుతమైన అంతర్దృష్టి కలవారు.',
+        weakness: 'అవాస్తవిక ఊహలలో విహరించడం (Escapism), సులభంగా మోసపోవడం, ఆర్థిక విషయాలలో నిర్లక్ష్యం.',
+        careers: 'వైద్యం & ఫార్మసీ, సముద్ర సంబంధిత రంగాలు, సంగీతం & లలిత కళలు, సైకాలజీ, ఆధ్యాత్మిక సంస్థలు, ఫిల్మ్ మేకింగ్.',
+        direction: 'ఉత్తరం (North) & ఈశాన్యం (Northeast)',
+        gemstone: 'పుష్యరాగం (Yellow Sapphire) - బంగారంలో కుడిచేతి చూపుడు వేలికి.',
+        numbers: '3, 7, 2'
+      }
+    };
+
+    const NAKSHATRA_REMEDIES = {
+      'Ketu': {
+        deity: 'శ్రీ విఘ్నేశ్వరుడు (Lord Ganesha)',
+        stotra: 'సంకటనాశన గణేశ స్తోత్రం',
+        remedy: 'సంకష్టహర చతుర్థి నాడు వినాయకునికి గరిక సమర్పించి కొబ్బరికాయ కొట్టడం విశేష శుభకరం. పేదలకు దుప్పట్లు లేదా వస్త్రాలు దానం చేయడం మంచిది.',
+        mantra: 'ఓం కేం కేతవే నమః'
+      },
+      'Venus': {
+        deity: 'శ్రీ మహాలక్ష్మి (Goddess Lakshmi)',
+        stotra: 'కనకధారా స్తోత్రం లేదా శ్రీసూక్తం',
+        remedy: 'శుక్రవారం నాడు లక్ష్మీదేవికి పాయసం నివేదించడం, స్త్రీలను గౌరవించి పసుపు-కుంకుమలు ఇవ్వడం వల్ల దారిద్య్ర దోషాలు తొలగి ఐశ్వర్యం సిద్ధిస్తుంది.',
+        mantra: 'ఓం శుం శుక్రాయ నమః'
+      },
+      'Sun': {
+        deity: 'సూర్య భగవానుడు & పరమశివుడు (Lord Surya & Shiva)',
+        stotra: 'ఆదిత్య హృదయ స్తోత్రం',
+        remedy: 'నిత్యం ఉదయాన్నే రాగి పాత్రతో సూర్యునికి అర్ఘ్యం సమర్పించడం, ఆదివారం నాడు ఉప్పు లేని ఆహారం తీసుకోవడం లేదా గోధుమలు దానం చేయడం శ్రేయస్కరం.',
+        mantra: 'ఓం ఘృణిః సూర్యాయ నమః'
+      },
+      'Moon': {
+        deity: 'పార్వతీ దేవి & శ్రీ లలితా పరమేశ్వరి (Goddess Parvati)',
+        stotra: 'శ్రీ లలితా సహస్రనామ స్తోత్రం',
+        remedy: 'సోమవారం నాడు పరమశివునికి పాలతో అభిషేకం చేయడం, తల్లి ఆశీర్వాదం తీసుకోవడం మరియు పౌర్ణమి నాడు బియ్యం దానం చేయడం మానసిక శాంతినిస్తుంది.',
+        mantra: 'ఓం సోం సోమాయ నమః'
+      },
+      'Mars': {
+        deity: 'సుబ్రహ్మణ్య స్వామి & శ్రీ హనుమంతుడు (Lord Subrahmanya & Hanuman)',
+        stotra: 'సుబ్రహ్మణ్య అష్టకం లేదా హనుమాన్ చాలీసా',
+        remedy: 'మంగళవారం నాడు ఆంజనేయ స్వామికి సింధూర పూజ చేయడం, ఎర్రటి కందులు దానం చేయడం వల్ల భూమి వివాదాలు, కుజ దోషాలు శాంతిస్తాయి.',
+        mantra: 'ఓం అం అంగారకాయ నమః'
+      },
+      'Rahu': {
+        deity: 'దుర్గాదేవి & సరస్వతీ దేవి (Goddess Durga)',
+        stotra: 'దుర్గా అష్టోత్తర శతనామావళి',
+        remedy: 'రాహు కాలంలో దుర్గాదేవి వద్ద నిమ్మకాయ దీపం వెలిగించడం, పక్షులకు లేదా వీధి కుక్కలకు ఆహారం పెట్టడం వల్ల ఆకస్మిక ఆటంకాలు తొలగిపోతాయి.',
+        mantra: 'ఓం రాం రాహవే నమః'
+      },
+      'Jupiter': {
+        deity: 'శ్రీ దత్తాత్రేయ & రాఘవేంద్ర స్వామి (Lord Dattatreya & Guru)',
+        stotra: 'గురు పాదుకా స్తోత్రం లేదా గురు చరిత్ర పారాయణం',
+        remedy: 'గురువారం నాడు శనగలు దానం చేయడం, గురువులను మరియు బ్రాహ్మణులను గౌరవించడం, అరటి చెట్టుకు పూజ చేయడం వల్ల జ్ఞాన సంపద, సంతాన సౌఖ్యం లభిస్తాయి.',
+        mantra: 'ఓం బృం బృహస్పతయే నమః'
+      },
+      'Saturn': {
+        deity: 'శ్రీ వేంకటేశ్వర స్వామి & శని దేవుడు (Lord Venkateswara & Shani)',
+        stotra: 'శని వజ్రపంజర స్తోత్రం లేదా దశరథ కృత శని స్తోత్రం',
+        remedy: 'శనివారం నాడు నల్లనువ్వుల నూనెతో దీపం వెలిగించడం, వికలాంగులకు లేదా నిరుపేదలకు అన్నదానం చేయడం, నల్ల వస్త్రాలు దానం చేయడం శని బాధల నుండి రక్షిస్తుంది.',
+        mantra: 'ఓం శం శనైశ్చరాయ నమః'
+      },
+      'Mercury': {
+        deity: 'శ్రీమహావిష్ణువు (Lord Vishnu)',
+        stotra: 'శ్రీ విష్ణు సహస్రనామ స్తోత్రం',
+        remedy: 'బుధవారం నాడు గోవుకు పచ్చగడ్డి తినిపించడం, తులసి చెట్టుకు ప్రదక్షిణలు చేయడం మరియు పేద విద్యార్థులకు పుస్తకాలు/పెన్నులు దానం చేయడం విద్య, వ్యాపార లాభాలను ఇస్తుంది.',
+        mantra: 'ఓం బుం బుధాయ నమః'
+      }
+    };
+
+    const NUMEROLOGY_TRAITS = {
+      1: { planet: 'సూర్యుడు (Sun)', trait: 'స్వతంత్ర నిర్ణయాలు, రాజస ప్రవృత్తి, అధికార హోదా, ఆత్మగౌరవం.', dates: '1, 10, 19, 28' },
+      2: { planet: 'చంద్రుడు (Moon)', trait: 'శాంతియుత స్వభావం, ఊహాశక్తి, దయాగుణం, ఇతరులతో సులభంగా కలిసిపోయే నేర్పు.', dates: '2, 11, 20, 29' },
+      3: { planet: 'గురుడు (Jupiter)', trait: 'ఉన్నత జ్ఞానం, దార్శనికత, సంప్రదాయ గౌరవం, బోధనా సామర్థ్యం.', dates: '3, 12, 21, 30' },
+      4: { planet: 'రాహువు (Rahu)', trait: 'నూతన పంథా, సాంకేతిక ఆసక్తి, వ్యూహాత్మక ఆలోచనలు, రాజీపడని పట్టుదల.', dates: '4, 13, 22, 31' },
+      5: { planet: 'బుధుడు (Mercury)', trait: 'వాక్చాతుర్యం, అపార విజ్ఞానం, వ్యాపార దక్షత, వేగవంతమైన నిర్ణయాలు.', dates: '5, 14, 23' },
+      6: { planet: 'శుక్రుడు (Venus)', trait: 'సౌందర్యారాధన, కళా నైపుణ్యం, కుటుంబ సంక్షేమం, ఆకర్షణీయమైన వ్యక్తిత్వం.', dates: '6, 15, 24' },
+      7: { planet: 'కేతువు (Ketu)', trait: 'పరిశోధనాత్మక దృష్టి, ఆధ్యాత్మిక అన్వేషణ, తాత్విక ఆలోచనలు, అంతర్జ్ఞానం.', dates: '7, 16, 25' },
+      8: { planet: 'శని (Saturn)', trait: 'క్రమశిక్షణ, అంకితభావం, శ్రమించే తత్వం, దీర్ఘకాలిక భవన నిర్మాణం.', dates: '8, 17, 26' },
+      9: { planet: 'కుజుడు (Mars)', trait: 'ధైర్యసాహసాలు, నాయకత్వ శక్తి, ఉత్సాహం, సమాజ సేవ పట్ల ఆసక్తి.', dates: '9, 18, 27' }
+    };
+
+    const DASHA_INTERPRETATIONS = {
+      'Ketu': 'ఈ కేతు మహర్దశ ఆధ్యాత్మిక ఆలోచనలను, అంతర్ముఖ ప్రయాణాన్ని, పరిశోధనాత్మక ప్రతిభను మేల్కొల్పుతుంది. అనవసర భ్రమలను తొలగించి వాస్తవికతను చూపుతుంది. స్థానచలనాలు, నూతన మార్గాల అన్వేషణకు అనుకూలం.',
+      'Venus': 'ఈ శుక్ర మహర్దశ భౌతిక సుఖాలు, కళా విజయాలు, నూతన వాహన/గృహ యోగం మరియు సౌకర్యాలను అనుగ్రహిస్తుంది. ఆకర్షణీయమైన సంబంధాలు, వ్యాపార విస్తరణ మరియు లగ్జరీ రంగాలలో విశేష పురోగతి లభిస్తుంది.',
+      'Sun': 'ఈ సూర్య మహర్దశ సమాజంలో ఉన్నత హోదా, ప్రభుత్వ గుర్తింపు, ఆత్మవిశ్వాసం మరియు నాయకత్వ బాధ్యతలను చేకూరుస్తుంది. పితృ వర్గ సహకారం, ఉన్నతాధికారుల మద్దతు లభిస్తుంది.',
+      'Moon': 'ఈ చంద్ర మహర్దశ మానసిక ప్రశాంతత, ప్రజాదరణ, నూతన ఆలోచనల సృష్టి మరియు గృహంలో శుభకార్యాలను కలిగిస్తుంది. ప్రయాణాలు మరియు మానసిక సంతృప్తికి అనుకూలమైన కాలం.',
+      'Mars': 'ఈ కుజ మహర్దశ అపారమైన ధైర్యం, ఉత్సాహం, స్థిరాస్తి/భూ లాభాలు మరియు పోటీ పరీక్షలలో విజయాన్ని ఇస్తుంది. కమాండింగ్ హోదా, స్వతంత్ర ప్రాజెక్టుల నిర్వహణలో తిరుగులేని శక్తినిస్తుంది.',
+      'Rahu': 'ఈ రాహు మహర్దశ వినూత్న సాంకేతిక పురోగతి, అకస్మాత్తుగా వచ్చే అవకాశాలు, విదేశీయాన యోగం మరియు ఉన్నత స్థాయికి ఎదిగే వ్యూహాత్మక ఆలోచనలను ఇస్తుంది. భ్రాంతులను వీడి క్రమశిక్షణతో ముందడుగు వేయాలి.',
+      'Jupiter': 'ఈ గురు మహర్దశ మహోన్నత జ్ఞానం, ఆర్థిక సమృద్ధి, సంతాన సౌఖ్యం, సమాజంలో విశేష గౌరవం మరియు ధార్మిక కార్యాచరణలను ప్రసాదిస్తుంది. సలహాదారునిగా, విద్యావేత్తగా ఉన్నత శిఖరాలను అధిరోహిస్తారు.',
+      'Saturn': 'ఈ శని మహర్దశ క్రమశిక్షణ, నిరంతర పరిశ్రమ, బాధ్యతల నిర్వహణ మరియు దీర్ఘకాలిక శాశ్వత పునాదులను వేస్తుంది. కష్టపడే తత్వానికి సమాజం సెల్యూట్ చేస్తుంది; అనుభవాల ద్వారా ఉన్నత స్థానాన్ని చేరుకుంటారు.',
+      'Mercury': 'ఈ బుధ మహర్దశ విద్యా వికాసం, వాక్చాతుర్యం, వాణిజ్య వ్యాపార లాభాలు, సాఫ్ట్‌వేర్/డేటా నైపుణ్యాలు మరియు విస్తృత స్నేహ సంబంధాలను అనుగ్రహిస్తుంది.'
+    };
+
+    // --- FULL DYNAMIC ASTROLOGER PREDICTION SYNTHESIS (Dual-Mode: Living vs Retrospective Memorial) ---
+    function buildAstrologerReport(name, dobStr, timeStr, placeStr, rasiIdx, lagnaIdx, nakObj, pada, activeDasha, bDayNum, lPathNum, isDeceased = false) {
+      const rasiProfile = RASI_PROFILES[rasiIdx] || RASI_PROFILES[0];
+      const lagnaProfile = RASI_PROFILES[lagnaIdx] || RASI_PROFILES[0];
+      const remedyObj = NAKSHATRA_REMEDIES[nakObj.lord] || NAKSHATRA_REMEDIES['Jupiter'];
+      const numObj = NUMEROLOGY_TRAITS[bDayNum] || NUMEROLOGY_TRAITS[1];
+      const dashaExpl = DASHA_INTERPRETATIONS[activeDasha.lord] || DASHA_INTERPRETATIONS['Jupiter'];
+
+      // Age calculation
+      const birthYear = parseInt(dobStr.split('-')[0], 10) || 2000;
+      const currentYear = new Date().getFullYear();
+      const nativeAge = Math.max(0, currentYear - birthYear);
+
+      let html = '';
+
+      // IF DECEASED / RETROSPECTIVE MEMORIAL MODE
+      if (isDeceased) {
+        // Memorial Top Dignified Banner
+        html += '<div style="background: #F8FAFC; border: 2px dashed #94A3B8; border-radius: var(--radius-md); padding: 18px 22px; margin-bottom: 22px; display: flex; align-items: flex-start; gap: 14px;">' +
+          '<span style="font-size: 2.2rem; line-height: 1;">🕊️</span>' +
+          '<div>' +
+          '<div style="font-size: 1.15rem; font-weight: 800; color: #1E293B; margin-bottom: 4px;">' +
+          'చారిత్రక & ఆత్మకారక విశ్లేషణ (Retrospective Memorial Horoscope & Soul Blueprint)' +
+          '</div>' +
+          '<div style="font-size: 0.9rem; color: #475569; line-height: 1.65;">' +
+          'ఈ జాతక పరిశీలన <strong>గతించిన / చారిత్రక మహనీయుల జీవిత విశ్లేషణ</strong> రీతిలో సమర్పించబడుతోంది. భౌతిక దేహం విడిచిన ఆత్మలకు సాధారణ ప్రాపంచిక భవిష్యత్ అంచనాల స్థానంలో, వారి <strong>ఆత్మకారక తత్వం, జీవితకాల సాధనలు, ఆయుర్దాయ వేద సూత్రాలు మరియు ఆత్మ శాంతికి సంబంధించిన వేద శాస్త్ర పరిహారాలు</strong> ఇక్కడ పొందుపరచబడ్డాయి.' +
+          '</div>' +
+          '</div></div>';
+
+        // Section 1: Core Soul Blueprint & Inborn Nature
+        html += '<div class="astrologer-reading-card">';
+        html += '<div class="reading-sec-header">';
+        html += '<div class="reading-sec-num">1</div>';
+        html += '<div>';
+        html += '<div class="reading-sec-title">వ్యక్తి సహజ స్వభావం & ఆత్మ స్వరూపం (Core Soul Blueprint & Character)</div>';
+        html += '<span class="reading-sec-subtitle">Retrospective Breakdown of Inborn Nature & Spirit</span>';
+        html += '</div></div>';
+
+        html += '<div class="astrologer-bullet"><span class="bullet-sym">✦</span><div class="bullet-content">' +
+          '<strong>రాశ్యాధిపతి & జన్మ సంఖ్య ముద్ర:</strong> ' +
+          'జన్మ సంఖ్య <strong>' + bDayNum + ' (' + numObj.planet + ')</strong> మరియు రాశ్యాధిపతి <strong>' + rasiProfile.lordTe + '</strong> సంయుక్త శక్తి వీరి జీవితంలో: ' + rasiProfile.swabhavam +
+          '</div></div>';
+
+        html += '<div class="astrologer-bullet"><span class="bullet-sym">✦</span><div class="bullet-content">' +
+          '<strong>ఆలోచనా విధానం & నైతిక విలువలు:</strong> ' + rasiProfile.mindset + ' వీరి జన్మ సంఖ్య ' + bDayNum + ' ప్రత్యేకత వల్ల: ' + numObj.trait +
+          '</div></div>';
+
+        html += '<div class="astrologer-bullet"><span class="bullet-sym">✦</span><div class="bullet-content">' +
+          '<strong>జన్మ నక్షత్ర ప్రభావం (' + nakObj.nameTe + ' - ' + pada + 'వ పాదం):</strong> ' +
+          nakObj.nameTe + ' నక్షత్ర సహజ శక్తి: <em>' + nakObj.trait + '</em>. నక్షత్రాధిపతి <strong>' + nakObj.lordTe + '</strong> వీరికి విశేషమైన సంకల్ప బలాన్ని, ఉన్నత ఆశయాలను అనుగ్రహించారు.' +
+          '</div></div>';
+
+        html += '<div class="astrologer-bullet"><span class="bullet-sym">✦</span><div class="bullet-content">' +
+          '<strong>జీవితంలో అధిగమించిన సవాళ్లు:</strong> ' + rasiProfile.weakness +
+          '</div></div>';
+        html += '</div>';
+
+        // Section 2: Life Journey & Vocational Strengths
+        html += '<div class="astrologer-reading-card">';
+        html += '<div class="reading-sec-header">';
+        html += '<div class="reading-sec-num">2</div>';
+        html += '<div>';
+        html += '<div class="reading-sec-title">జీవన ప్రస్థానం & విశిష్ట సాధనలు (Life Journey & Enduring Impact)</div>';
+        html += '<span class="reading-sec-subtitle">Historical Professional Alignment & Enduring Vocational Strengths</span>';
+        html += '</div></div>';
+
+        html += '<div class="astrologer-bullet"><span class="bullet-sym">🏛️</span><div class="bullet-content">' +
+          '<strong>సహజంగా అనుకూలించిన రంగాలు & ప్రతిభ:</strong><br>' +
+          '• <strong>' + rasiProfile.careers + '</strong>' +
+          '</div></div>';
+
+        html += '<div class="astrologer-bullet"><span class="bullet-sym">🌟</span><div class="bullet-content">' +
+          '<strong>జీవితకాల ప్రభావం & నైతిక ముద్ర:</strong> ' + rasiProfile.nameTe + ' రాశి, ' + nakObj.nameTe + ' నక్షత్ర ప్రభావం వల్ల వీరు తమ జీవన కాలంలో స్వయంకృషితో ఎదిగి, సమాజంలో లేదా కుటుంబంలో గౌరవప్రదమైన స్థానాన్ని పొందారు. పరిస్థితులకు లొంగని పట్టుదల వీరి ప్రత్యేకత.' +
+          '</div></div>';
+
+        html += '<div class="astrologer-bullet"><span class="bullet-sym">🌿</span><div class="bullet-content">' +
+          '<strong>పంచభూత తత్త్వ విశ్లేషణ:</strong> వీరిది <strong>' + rasiProfile.elementTe + '</strong> కాబట్టి తీవ్ర సంకల్పం, కర్తవ్య నిష్టతో కూడిన జీవన శైలిని కలిగి ఉండేవారు.' +
+          '</div></div>';
+        html += '</div>';
+
+        // Section 3: Ayurdaya & Longevity Principles
+        html += '<div class="astrologer-reading-card">';
+        html += '<div class="reading-sec-header">';
+        html += '<div class="reading-sec-num">3</div>';
+        html += '<div>';
+        html += '<div class="reading-sec-title">ఆయుర్దాయం, మారక స్థానాలు & వేద కాల చక్రాలు (Ayurdaya & Vedic Timing)</div>';
+        html += '<span class="reading-sec-subtitle">Classical Jyotish Principles of Longevity, Ayusthana & Vimshottari Cycles</span>';
+        html += '</div></div>';
+
+        html += '<div class="astrologer-bullet"><span class="bullet-sym">⚖️</span><div class="bullet-content">' +
+          '<strong>వేద జ్యోతిష్యంలో ఆయుర్దాయ విచారణ (Longevity in Parashara Jyotish):</strong><br>' +
+          'మహర్షి పరాశరుని హోరా శాస్త్రం ప్రకారం జాతక చక్రంలో <strong>8వ భావం (ఆయుష్షు స్థానం)</strong> మరియు <strong>3వ భావం (ఆయుష్షుకు పరిపూరక స్థానం)</strong> జీవన పరిమితిని సూచిస్తాయి. 2వ మరియు 7వ భావాధిపతులను <strong>మారక గ్రహాలు (Maraka Lords)</strong> అంటారు. ఆయా మారక మరియు బాధక గ్రహాల దశా-భుక్తులలో శరీర త్యాగం సంభవిస్తుంది.' +
+          '</div></div>';
+
+        html += '<div class="astrologer-bullet"><span class="bullet-sym">🪐</span><div class="bullet-content">' +
+          '<strong>ఖగోళ గణితం & నిరంతర కాల చక్రం:</strong><br>' +
+          'ఖగోళ గణిత సూత్రాల ప్రకారం గ్రహాలు నిరంతరం పరిభ్రమిస్తూనే ఉంటాయి. కంప్యూటర్ అల్గోరిథం కేవలం పుట్టిన సమయానికి సంబంధించిన కాల గణనను మాత్రమే చేస్తుంది; భౌతిక మరణం అనేది దేశ, కాల, పాత్ర మరియు ప్రారబ్ద కర్మల సంయోగం వల్ల జరుగుతుంది. అందుకే జాతక పరిశీలన అనేది ఆత్మ యొక్క శక్తి స్వరూపానికి వర్తిస్తుంది.' +
+          '</div></div>';
+        html += '</div>';
+
+        // Section 4: Favorable Cosmic Elements
+        html += '<div class="astrologer-reading-card">';
+        html += '<div class="reading-sec-header">';
+        html += '<div class="reading-sec-num">4</div>';
+        html += '<div>';
+        html += '<div class="reading-sec-title">దివ్య అనుకూలతలు & ఆత్మ సంధాన శక్తులు (Soul Blueprint Elements)</div>';
+        html += '<span class="reading-sec-subtitle">Resonant Directions, Cosmic Vibrations & Sacred Alignments</span>';
+        html += '</div></div>';
+
+        html += '<div class="astrologer-bullet"><span class="bullet-sym">🧭</span><div class="bullet-content">' +
+          '<strong>దివ్య దిశ (Sacred Direction):</strong> <strong>' + rasiProfile.direction + '</strong> — వీరి జ్ఞాపకార్థం చేసే పూజలు, తర్పణాలు లేదా స్మారక ప్రార్థనలు ఈ దిశ వైపు తిరిగి చేయడం విశేష శుభకరం.' +
+          '</div></div>';
+
+        html += '<div class="astrologer-bullet"><span class="bullet-sym">🔢</span><div class="bullet-content">' +
+          '<strong>సంఖ్యా శక్తి (Spiritual Numbers):</strong> <strong>' + bDayNum + ', ' + lPathNum + ', ' + rasiProfile.numbers + '</strong>' +
+          '</div></div>';
+
+        html += '<div class="astrologer-bullet"><span class="bullet-sym">💎</span><div class="bullet-content">' +
+          '<strong>ఆత్మ కారక రత్న ప్రభావం:</strong> ' + rasiProfile.gemstone +
+          '</div></div>';
+        html += '</div>';
+
+        // Section 5: Tarpanam & Memorial Peace Remedies
+        html += '<div class="astrologer-reading-card">';
+        html += '<div class="reading-sec-header">';
+        html += '<div class="reading-sec-num">5</div>';
+        html += '<div>';
+        html += '<div class="reading-sec-title">ఆత్మ శాంతి, పితృ తర్పణ & పుణ్య కర్మలు (Sacred Memorial Acts)</div>';
+        html += '<span class="reading-sec-subtitle">Vedic Prayers, Memorial Charity & Sacred Rituals for Soul Elevation</span>';
+        html += '</div></div>';
+
+        html += '<div class="astrologer-bullet"><span class="bullet-sym">🕉️</span><div class="bullet-content">' +
+          '<strong>మహా మృత్యుంజయ & గాయత్రీ మంత్ర జపం:</strong> గతించిన వారి ఆత్మ శాంతికి, ఉత్తమ లోక ప్రాప్తికి నిత్యం లేదా పర్వదినాల్లో <strong>శ్రీ మహా మృత్యుంజయ మంత్రం</strong> లేదా <strong>గాయత్రీ మంత్రం</strong> జపించడం పరమ పవిత్రం.' +
+          '</div></div>';
+
+        html += '<div class="astrologer-bullet"><span class="bullet-sym">🌾</span><div class="bullet-content">' +
+          '<strong>పితృ తర్పణం & అమావాస్య అన్నదానం:</strong> మహాలయ అమావాస్య, పితృ పక్షాలలో మరియు ప్రతి అమావాస్య నాడు నువ్వులతో తర్పణం వదలడం, వారి పేరు మీద ఆకలితో ఉన్న పేదలకు అన్నదానం చేయడం వల్ల పితృ ఋణం తీరి వంశీయులకు పితృ దేవతల సంపూర్ణ ఆశీస్సులు లభిస్తాయి.' +
+          '</div></div>';
+
+        html += '<div class="astrologer-bullet"><span class="bullet-sym">🐄</span><div class="bullet-content">' +
+          '<strong>గోసేవ (గోదాన పుణ్య ఫలం):</strong> వీరి జన్మ నక్షత్రం (' + nakObj.nameTe + ') వచ్చే రోజున గోమాతకు పచ్చగడ్డి, అరటిపండ్లు లేదా బెల్లం తినిపించడం వల్ల సమస్త పూర్వ దోషాలు నశించి ఆత్మకు సద్గతులు ప్రాప్తిస్తాయి.' +
+          '</div></div>';
+
+        html += '<div class="astrologer-bullet"><span class="bullet-sym">📖</span><div class="bullet-content">' +
+          '<strong>జ్ఞాన దానం / విద్యాదానం:</strong> గతించిన వారి స్మారకార్థం నిరుపేద విద్యార్థులకు పుస్తకాలు, ఫీజుల రూపంలో సహాయం చేయడం శాశ్వత పుణ్యాన్ని చేకూర్చే ఉత్తమ కర్మ.' +
+          '</div></div>';
+        html += '</div>';
+
+        return html;
+      }
+
+      // STANDARD LIVING NATIVE PREDICTIONS REPORT
+      let milestoneText = '';
+      if (nativeAge <= 20) {
+        const m1 = birthYear + 22;
+        const m2 = birthYear + 25;
+        milestoneText = 'ప్రస్తుతం మీరు నైపుణ్యాల సముపార్జన దశలో ఉన్నారు. <strong>22–25 ఏళ్ల వయస్సులో (' + m1 + '–' + m2 + ')</strong> విద్యాభ్యాసం పూర్తయి అద్భుతమైన ఉద్యోగ ప్రవేశం లేదా కెరీర్ శుభారంభం జరుగుతుంది. 28 ఏళ్ల నాటికి ఆర్థిక స్వాలంబన సిద్ధించి స్వశక్తితో స్థిరపడతారు.';
+      } else if (nativeAge <= 26) {
+        const m1 = currentYear + 1;
+        const m2 = currentYear + 4;
+        milestoneText = 'మీరు ప్రస్తుతం కెరీర్ ఎదుగుదల మరియు పునాదులు వేసుకునే కీలక వయస్సులో ఉన్నారు. <strong>' + m1 + '–' + m2 + ' నాటికి (వయస్సు ' + (nativeAge + 1) + '–' + (nativeAge + 4) + ')</strong> మీ వృత్తిలో ప్రమోషన్ లేదా అద్భుతమైన ఆర్థిక స్థిరత్వం ప్రారంభమవుతుంది. 30 ఏళ్ల నాటికి స్వయంకృషితో వాహన యోగం లేదా ఆస్తి సమకూరుతుంది.';
+      } else if (nativeAge <= 38) {
+        const m1 = currentYear + 1;
+        const m2 = currentYear + 3;
+        milestoneText = 'మీ జీవితంలో అత్యంత ఉత్పాదకత కలిగిన దశ ఇది. గతంలో పడ్డ కష్టానికి తగిన గుర్తింపు లభించే సమయం. <strong>' + m1 + '–' + m2 + ' సంవత్సరాలలో</strong> స్థిరాస్తి కొనుగోలు, ఉన్నత పదవి లేదా వ్యాపార విస్తరణ వంటి గొప్ప విజయాలు నమోదు కానున్నాయి.';
+      } else if (nativeAge <= 52) {
+        const m1 = currentYear + 1;
+        const m2 = currentYear + 3;
+        milestoneText = 'మీరు జీవితంలో విశేష అనుభవంతో పరిపక్వత సాధించిన దశలో ఉన్నారు. <strong>' + m1 + '–' + m2 + ' కాలంలో</strong> మీ రంగంలో అత్యున్నత సలహాదారునిగా, నాయకునిగా రాణిస్తారు. కుటుంబంలో శుభకార్యాలు, సంతాన ఉన్నతి మరియు శాశ్వత సంపద వృద్ధి చెందుతాయి.';
+      } else {
+        const m1 = currentYear + 1;
+        milestoneText = 'జీవితానుభవాలతో కూడిన విజ్ఞానం, సమాజంలో విశిష్ట గౌరవ మర్యాదలు మీకు దక్కుతాయి. <strong>' + m1 + ' నాటికి</strong> ఆధ్యాత్మిక ప్రశాంతత, ధర్మకార్యాలు మరియు కుటుంబంలో గౌరవప్రదమైన సుస్థిరత లభిస్తుంది.';
+      }
+
+      // Section 1: Core Nature & Swabhavam
+      html += '<div class="astrologer-reading-card">';
+      html += '<div class="reading-sec-header">';
+      html += '<div class="reading-sec-num">1</div>';
+      html += '<div>';
+      html += '<div class="reading-sec-title">వ్యక్తి స్వభావం & మనస్తత్వ విశ్లేషణ (' + rasiProfile.nameTe + ' రాశి & ' + nakObj.nameTe + ' నక్షత్రం)</div>';
+      html += '<span class="reading-sec-subtitle">Comprehensive In-depth Psychological & Character Breakdown</span>';
+      html += '</div></div>';
+
+      html += '<div class="astrologer-bullet"><span class="bullet-sym">✦</span><div class="bullet-content">' +
+        '<strong>రాశ్యాధిపతి & జన్మ సంఖ్య ప్రభావం:</strong> ' +
+        'మీ జన్మ సంఖ్య <strong>' + bDayNum + ' (' + numObj.planet + ')</strong> మరియు రాశ్యాధిపతి <strong>' + rasiProfile.lordTe + '</strong> సంయుక్త ప్రభావం వల్ల మీ వ్యక్తిత్వంలో: ' + rasiProfile.swabhavam +
+        '</div></div>';
+
+      html += '<div class="astrologer-bullet"><span class="bullet-sym">✦</span><div class="bullet-content">' +
+        '<strong>ఆలోచనా విధానం & దృక్పథం:</strong> ' + rasiProfile.mindset + ' జన్మ సంఖ్య ' + bDayNum + ' ప్రత్యేకత వల్ల ' + numObj.trait +
+        '</div></div>';
+
+      html += '<div class="astrologer-bullet"><span class="bullet-sym">✦</span><div class="bullet-content">' +
+        '<strong>జన్మ నక్షత్ర ప్రభావం (' + nakObj.nameTe + ' - ' + pada + 'వ పాదం):</strong> ' +
+        nakObj.nameTe + ' నక్షత్రంలో జన్మించిన మీ సహజ లక్షణం: <em>' + nakObj.trait + '</em>. నక్షత్రాధిపతి <strong>' + nakObj.lordTe + '</strong> వీరికి విశేషమైన ఆలోచనా పరిధిని, ఆత్మవిశ్వాసాన్ని అనుగ్రహిస్తారు.' +
+        '</div></div>';
+
+      html += '<div class="astrologer-bullet"><span class="bullet-sym">✦</span><div class="bullet-content">' +
+        '<strong>అధిగమించాల్సిన బలహీనతలు (Areas of Improvement):</strong> ' + rasiProfile.weakness +
+        '</div></div>';
+      html += '</div>';
+
+      // Section 2: Way of Living & Career
+      html += '<div class="astrologer-reading-card">';
+      html += '<div class="reading-sec-header">';
+      html += '<div class="reading-sec-num">2</div>';
+      html += '<div>';
+      html += '<div class="reading-sec-title">జీవన విధానం & భవిష్యత్ మార్గం (' + rasiProfile.nameTe + ' రాశి అనుకూలతలు)</div>';
+      html += '<span class="reading-sec-subtitle">Auspicious Career Domains, Wealth Milestones & Lifestyle Guidance</span>';
+      html += '</div></div>';
+
+      html += '<div class="astrologer-bullet"><span class="bullet-sym">💼</span><div class="bullet-content">' +
+        '<strong>అత్యంత అనుకూలమైన వృత్తి రంగాలు:</strong><br>' +
+        '• <strong>' + rasiProfile.careers + '</strong>' +
+        '</div></div>';
+
+      html += '<div class="astrologer-bullet"><span class="bullet-sym">💰</span><div class="bullet-content">' +
+        '<strong>ధన యోగం & వయస్సు మైలురాళ్లు (ప్రస్తుత వయస్సు: ' + nativeAge + ' సం.):</strong><br>' +
+        milestoneText +
+        '</div></div>';
+
+      html += '<div class="astrologer-bullet"><span class="bullet-sym">🌱</span><div class="bullet-content">' +
+        '<strong>జీవన శైలి & ఆరోగ్య నియమాలు:</strong> మీది <strong>' + rasiProfile.elementTe + '</strong> కాబట్టి శరీర సమతుల్యతను కాపాడుకోవడం ముఖ్యం. తగినంత విశ్రాంతి, క్రమశిక్షణతో కూడిన ఆహార నియమాలు మరియు వ్యాయామం మీ ఆయురారోగ్యాలను స్థిరంగా ఉంచుతాయి.' +
+        '</div></div>';
+      html += '</div>';
+
+      // Section 3: Current Dasha & Timing
+      html += '<div class="astrologer-reading-card">';
+      html += '<div class="reading-sec-header">';
+      html += '<div class="reading-sec-num">3</div>';
+      html += '<div>';
+      html += '<div class="reading-sec-title">ప్రస్తుతం నడుస్తున్న మహాదశ & గోచార ప్రభావం (' + activeDasha.lord + ' Mahadasha)</div>';
+      html += '<span class="reading-sec-subtitle">Planetary Cycles & Current Astrological Climate</span>';
+      html += '</div></div>';
+
+      html += '<div class="astrologer-bullet"><span class="bullet-sym">🪐</span><div class="bullet-content">' +
+        '<strong>ప్రస్తుతం నడుస్తున్నది: ' + activeDasha.lord + ' మహర్దశ (' + activeDasha.start + ' - ' + activeDasha.end + '):</strong><br>' +
+        dashaExpl +
+        '</div></div>';
+
+      html += '<div class="astrologer-bullet"><span class="bullet-sym">⭐</span><div class="bullet-content">' +
+        '<strong>గోచార గ్రహ ప్రభావం (' + rasiProfile.nameTe + ' రాశికి):</strong> ' +
+        'గోచారంలో రాశ్యాధిపతి ' + rasiProfile.lordTe + ' మరియు గురు, శని గ్రహాల స్థితిని బట్టి రాబోయే కాలం మీ వృత్తి, కుటుంబ విషయాలలో కీలక మలుపులను చూపుతోంది. అనుకూల సమయాన్ని సద్వినియోగం చేసుకోవడం ఉత్తమం.' +
+        '</div></div>';
+      html += '</div>';
+
+      // Section 4: Lucky Alignments
+      html += '<div class="astrologer-reading-card">';
+      html += '<div class="reading-sec-header">';
+      html += '<div class="reading-sec-num">4</div>';
+      html += '<div>';
+      html += '<div class="reading-sec-title">అనుకూల దిశలు, సంఖ్యలు & అదృష్ట రత్నం (' + rasiProfile.nameTe + ' Lucky Alignments)</div>';
+      html += '<span class="reading-sec-subtitle">Vastu Direction, Numerology Numbers & Gemstone Prescription</span>';
+      html += '</div></div>';
+
+      html += '<div class="astrologer-bullet"><span class="bullet-sym">🧭</span><div class="bullet-content">' +
+        '<strong>సర్వోత్తమ దిశ (Best Direction):</strong> <strong>' + rasiProfile.direction + '</strong> — మీ కార్యాలయ డెస్క్, పూజా స్థలం లేదా అధ్యయన గది ఈ దిశల్లో ఉంటే ఏకాగ్రత, ధన ప్రవాహం మరియు సానుకూల శక్తి లభిస్తాయి.' +
+        '</div></div>';
+
+      html += '<div class="astrologer-bullet"><span class="bullet-sym">🔢</span><div class="bullet-content">' +
+        '<strong>అదృష్ట సంఖ్యలు (Lucky Numbers):</strong> <strong>' + bDayNum + ', ' + lPathNum + ', ' + rasiProfile.numbers + '</strong> — ముఖ్యమైన పనులు, కొత్త ప్రాజెక్ట్‌ల ప్రారంభం, ఒప్పందాలకు ఈ సంఖ్యలు అత్యంత శుభప్రదం.' +
+        '</div></div>';
+
+      html += '<div class="astrologer-bullet"><span class="bullet-sym">💎</span><div class="bullet-content">' +
+        '<strong>ధరించాల్సిన రత్నం (Auspicious Gemstone):</strong> ' + rasiProfile.gemstone +
+        '</div></div>';
+      html += '</div>';
+
+      // Section 5: Remedies
+      html += '<div class="astrologer-reading-card">';
+      html += '<div class="reading-sec-header">';
+      html += '<div class="reading-sec-num">5</div>';
+      html += '<div>';
+      html += '<div class="reading-sec-title">దోష నివారణ & వ్యక్తిగత పరిహారాలు (' + nakObj.nameTe + ' నక్షత్ర శాంతి)</div>';
+      html += '<span class="reading-sec-subtitle">Remedial Prayers, Mantras & Sacred Acts for Success</span>';
+      html += '</div></div>';
+
+      html += '<div class="astrologer-bullet"><span class="bullet-sym">🙏</span><div class="bullet-content">' +
+        '<strong>ఇష్ట దైవ ఆరాధన (' + remedyObj.deity + '):</strong> ' +
+        'మీ జన్మ నక్షత్ర అధిపతి ' + nakObj.lordTe + ' కాబట్టి <strong>' + remedyObj.deity + '</strong> ని పూజించడం సర్వశ్రేయస్కరం. నిత్యం లేదా విశేష దినాన <strong>' + remedyObj.stotra + '</strong> పఠించడం విశేష ఫలితాన్నిస్తుంది.' +
+        '</div></div>';
+
+      html += '<div class="astrologer-bullet"><span class="bullet-sym">🪷</span><div class="bullet-content">' +
+        '<strong>నక్షత్ర శాంతి పరిహారం:</strong> ' + remedyObj.remedy +
+        '</div></div>';
+
+      html += '<div class="astrologer-bullet"><span class="bullet-sym">✨</span><div class="bullet-content">' +
+        '<strong>అధిష్టాన దేవతా మూల మంత్రం:</strong> జపించాల్సిన మంత్రం: <strong>' + remedyObj.mantra + '</strong> (రోజుకు 11 లేదా 108 సార్లు జపించడం వల్ల సర్వ కార్య జయం కలుగుతుంది).' +
+        '</div></div>';
+
+      html += '<div class="astrologer-bullet"><span class="bullet-sym">🐄</span><div class="bullet-content">' +
+        '<strong>జీవ కారుణ్యం & గోసేవ:</strong> మీ జన్మ నక్షత్రం (' + nakObj.nameTe + ') వచ్చే రోజున లేదా పర్వదినాల్లో గోమాతకు పచ్చగడ్డి, అరటిపండ్లు లేదా నానబెట్టిన ధాన్యాలు తినిపించడం పూర్వ పాప ప్రక్షాళనకు, ఐశ్వర్య వృద్ధికి అద్భుతమైన మార్గం.' +
+        '</div></div>';
+      html += '</div>';
+
+      return html;
+    }
+
+
+    // --- LOCAL STORAGE & DATA PERSISTENCE ENGINE ---
+    function persistProfileLocally(profileData) {
+      try {
+        // 1. Save active profile
+        localStorage.setItem('providence_active_profile', JSON.stringify(profileData));
+
+        // 2. Add to history list (up to 25 profiles)
+        let history = [];
+        try {
+          history = JSON.parse(localStorage.getItem('providence_profiles_history') || '[]');
+        } catch(e) { history = []; }
+
+        const existingIdx = history.findIndex(h => h.name === profileData.name && h.dob === profileData.dob);
+        if (existingIdx >= 0) {
+          history[existingIdx] = profileData;
+        } else {
+          history.unshift(profileData);
+        }
+        if (history.length > 25) history = history.slice(0, 25);
+        localStorage.setItem('providence_profiles_history', JSON.stringify(history));
+
+        renderSavedProfilesDropdown();
+
+        // 3. Backup to local node server data file
+        fetch('/api/save-record', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(profileData)
+        }).catch(() => {});
+      } catch (err) {
+        console.warn('Storage warning:', err);
+      }
+    }
+
+    function renderSavedProfilesDropdown() {
+      const selectElem = document.getElementById('selectSavedProfile');
+      const wrapElem = document.getElementById('savedProfilesWrap');
+      if (!selectElem || !wrapElem) return;
+
+      let history = [];
+      try {
+        history = JSON.parse(localStorage.getItem('providence_profiles_history') || '[]');
+      } catch(e) { history = []; }
+
+      if (history.length === 0) {
+        wrapElem.style.display = 'none';
+        return;
+      }
+
+      wrapElem.style.display = 'flex';
+      let optionsHtml = '<option value="">-- Select a saved profile (' + history.length + ') --</option>';
+      history.forEach((h, idx) => {
+        optionsHtml += '<option value="' + idx + '">' + (h.name || 'Native') + ' (' + h.dob + ')</option>';
+      });
+      selectElem.innerHTML = optionsHtml;
+    }
+
+    function chooseSavedProfile(idxStr) {
+      if (idxStr === '') return;
+      const idx = parseInt(idxStr, 10);
+      try {
+        const history = JSON.parse(localStorage.getItem('providence_profiles_history') || '[]');
+        const chosen = history[idx];
+        if (chosen) {
+          document.getElementById('inputName').value = chosen.name || '';
+          document.getElementById('inputDob').value = chosen.dob || '2005-04-01';
+          document.getElementById('inputTime').value = chosen.time || '10:30';
+          document.getElementById('inputPlace').value = chosen.place || 'Hyderabad';
+          document.getElementById('inputRasi').value = (chosen.rasi !== undefined) ? chosen.rasi : '';
+          document.getElementById('inputNakshatra').value = chosen.nakshatra || '';
+          if (document.getElementById('inputStatus')) document.getElementById('inputStatus').value = chosen.status || 'living';
+          recalculateAccuracy();
+          runCalculationEngine();
+        }
+      } catch (e) {}
+    }
+
+    function clearAllSavedProfiles() {
+      if (confirm('Are you sure you want to clear your saved profiles history?')) {
+        localStorage.removeItem('providence_active_profile');
+        localStorage.removeItem('providence_profiles_history');
+        renderSavedProfilesDropdown();
+        alert('Saved history cleared.');
+      }
+    }
+
+    function loadActiveProfileOnStartup() {
+      try {
+        const activeStr = localStorage.getItem('providence_active_profile');
+        if (activeStr) {
+          const active = JSON.parse(activeStr);
+          if (active && active.dob) {
+            document.getElementById('inputName').value = active.name || '';
+            document.getElementById('inputDob').value = active.dob || '2005-04-01';
+            document.getElementById('inputTime').value = active.time || '10:30';
+            document.getElementById('inputPlace').value = active.place || 'Hyderabad';
+            document.getElementById('inputRasi').value = (active.rasi !== undefined) ? active.rasi : '';
+            document.getElementById('inputNakshatra').value = active.nakshatra || '';
+          }
+        }
+      } catch (e) {}
+      renderSavedProfilesDropdown();
+    }
+
+    // --- MASTER CALCULATION ENGINE ---
+    function runCalculationEngine() {
+      const dobInput = document.getElementById('inputDob');
+      const dobVal = dobInput.value;
+      if (!dobVal) {
+        alert('దయచేసి మీ పుట్టిన తేదీని నమోదు చేయండి (Please enter your Date of Birth to proceed).');
+        dobInput.focus();
+        return;
+      }
+      const name = document.getElementById('inputName').value.trim() || 'Cosmic Native';
+      const timeVal = document.getElementById('inputTime').value || '12:00';
+      const placeVal = document.getElementById('inputPlace').value.trim() || 'Hyderabad';
+      const userRasiVal = document.getElementById('inputRasi').value;
+      const userNakVal = document.getElementById('inputNakshatra').value;
+      const statusInput = document.getElementById('inputStatus') ? document.getElementById('inputStatus').value : 'living';
+
+      const parts = dobVal.split('-');
+      const yStr = parts[0], mStr = parts[1], dStr = parts[2];
+      const timeParts = timeVal.split(':');
+      const hStr = timeParts[0], minStr = timeParts[1];
+      const birthYear = parseInt(yStr, 10);
+      const birthMonth = parseInt(mStr, 10);
+      const birthDay = parseInt(dStr, 10);
+      const birthHour = parseInt(hStr || '12', 10);
+      const birthMin = parseInt(minStr || '0', 10);
+      const currentCalendarYear = new Date().getFullYear();
+      const nativeAge = Math.max(0, currentCalendarYear - birthYear);
+      const isDeceased = (statusInput === 'deceased') || (nativeAge > 100);
+
+      // Ephemeris Calculation
+      const eph = calculateEphemeris(birthYear, birthMonth, birthDay, birthHour, birthMin);
+
+      // Moon Sign & Lagna
+      const moonRasiIndex = userRasiVal !== '' ? parseInt(userRasiVal, 10) : Math.floor(eph.moon / 30);
+      const lagnaRasiIndex = Math.floor(eph.lagna / 30);
+
+      // Nakshatra & Pada
+      const nakIndex = Math.floor(eph.moon / 13.3333333) % 27;
+      const pada = Math.floor((eph.moon % 13.3333333) / 3.3333333) + 1;
+      const autoNak = NAKSHATRAS_27[nakIndex] || NAKSHATRAS_27[0];
+      const selectedNak = userNakVal ? (NAKSHATRAS_27.find(n => n.name === userNakVal) || autoNak) : autoNak;
+
+      const rasi = RASIS_DATA[moonRasiIndex];
+      const lagna = RASIS_DATA[lagnaRasiIndex];
+
+      // Numerology
+      const reduceNum = (n) => {
+        while (n > 9 && n !== 11 && n !== 22 && n !== 33) {
+          n = String(n).split('').map(Number).reduce((a, b) => a + b, 0);
+        }
+        return n;
+      };
+      const bDayNum = reduceNum(birthDay);
+      const digitsSum = dobVal.replace(/\D/g, '').split('').map(Number).reduce((a, b) => a + b, 0);
+      const lPathNum = reduceNum(digitsSum);
+
+      // Vimshottari 120-Year Dasha Timeline
+      const elapsedNakFraction = (eph.moon % 13.3333333) / 13.3333333;
+      const firstLord = selectedNak.lord;
+      const totalFirstDasha = DASHA_YEARS[firstLord];
+      const balanceYears = totalFirstDasha * (1 - elapsedNakFraction);
+
+      let currentYearCursor = birthYear + (birthMonth - 1) / 12 + birthDay / 365.25;
+      const dashaTimeline = [];
+      let activeDashaObj = null;
+
+      let lordIdx = DASHA_ORDER.indexOf(firstLord);
+      for (let i = 0; i < 9; i++) {
+        const lordName = DASHA_ORDER[(lordIdx + i) % 9];
+        const span = (i === 0) ? balanceYears : DASHA_YEARS[lordName];
+        const startYr = currentYearCursor;
+        const endYr = startYr + span;
+
+        const isRunning = (currentCalendarYear >= startYr && currentCalendarYear < endYr);
+        const dashaItem = {
+          lord: lordName,
+          start: Math.round(startYr),
+          end: Math.round(endYr),
+          spanYears: Math.round(span * 10) / 10,
+          isRunning: isRunning
+        };
+        dashaTimeline.push(dashaItem);
+        if (isRunning) activeDashaObj = dashaItem;
+        currentYearCursor = endYr;
+      }
+      if (!activeDashaObj) activeDashaObj = dashaTimeline[1] || dashaTimeline[0];
+
+      // Update Native Profile Bar
+      document.getElementById('profileSummaryBar').style.display = 'flex';
+      document.getElementById('profName').innerText = name;
+      document.getElementById('profDetails').innerText = 'DOB: ' + dStr + '-' + mStr + '-' + yStr + ' | Time: ' + timeVal + ' | Place: ' + placeVal;
+      document.getElementById('profLagna').innerText = 'లగ్నం: ' + lagna.nameTe;
+      document.getElementById('profRasi').innerText = 'రాశి: ' + rasi.nameTe;
+      document.getElementById('profNakshatra').innerText = 'నక్షత్రం: ' + selectedNak.nameTe + ' (' + pada + 'వ పాదం)';
+      document.getElementById('profDasha').innerText = isDeceased ? 'చారిత్రక చక్రం: ' + activeDashaObj.lord + ' దశావధి' : 'ప్రస్తుత మహర్దశ: ' + activeDashaObj.lord + ' మహర్దశ (' + activeDashaObj.start + ' - ' + activeDashaObj.end + ')';
+      document.getElementById('profLifePath').innerText = 'Birth No: ' + bDayNum + ' | Life Path: ' + lPathNum;
+
+      // Populate Deep Astrologer Reading
+      const fullReadingHtml = buildAstrologerReport(name, dobVal, timeVal, placeVal, moonRasiIndex, lagnaRasiIndex, selectedNak, pada, activeDashaObj, bDayNum, lPathNum, isDeceased);
+      document.getElementById('fullAstrologerReportContainer').innerHTML = fullReadingHtml;
+
+      // Populate Dasha Table
+      renderDashaTable(dashaTimeline);
+
+      // Populate Kundali SVG
+      renderClassicalKundaliSvg(lagnaRasiIndex, eph);
+
+      // Populate Day-by-Day Dress Colors
+      renderDailyDressColors(activeDashaObj.lord, bDayNum, rasi.lord);
+
+      
+      // Automatically save/persist profile locally
+      persistProfileLocally({
+        name: name,
+        dob: dobVal,
+        time: timeVal,
+        place: placeVal,
+        rasi: userRasiVal,
+        nakshatra: userNakVal,
+        status: statusInput
+      });
+
+      // Switch to Full Telugu Reading tab
+      switchSection('predictions');
+    }
+
+    // Render Dasha Table
+    function renderDashaTable(timeline) {
+      let html = '<thead><tr>' +
+        '<th>మహర్దశ (Mahadasha Lord)</th>' +
+        '<th>ప్రారంభ సంవత్సరం (Start)</th>' +
+        '<th>ముగింపు సంవత్సరం (End)</th>' +
+        '<th>కాలవ్యవధి (Years)</th>' +
+        '<th>స్థితి (Status)</th>' +
+        '</tr></thead><tbody>';
+
+      timeline.forEach(item => {
+        const rowClass = item.isRunning ? 'active-dasha' : '';
+        const statusBadge = item.isRunning ? '<span class="pill-red">★ ప్రస్తుతం నడుస్తున్న దశ (Active)</span>' : '<span style="color: var(--text-muted);">పూర్తయినది / భవిష్యత్తు</span>';
+        html += '<tr class="' + rowClass + '">' +
+          '<td><strong>' + item.lord + ' మహర్దశ</strong></td>' +
+          '<td>' + item.start + '</td>' +
+          '<td>' + item.end + '</td>' +
+          '<td>' + item.spanYears + ' సం.</td>' +
+          '<td>' + statusBadge + '</td>' +
+          '</tr>';
+      });
+      html += '</tbody>';
+      document.getElementById('tableDashaBody').innerHTML = html;
+    }
+
+    // Render Kundali Diamond Chart SVG
+    function renderClassicalKundaliSvg(lagnaIndex, eph) {
+      const houseGrahas = Array.from({ length: 12 }, () => []);
+
+      const getHouse = (degree) => {
+        const sign = Math.floor(degree / 30);
+        return ((sign - lagnaIndex + 12) % 12);
+      };
+
+      houseGrahas[getHouse(eph.sun)].push('సూర్య');
+      houseGrahas[getHouse(eph.moon)].push('చంద్ర');
+      houseGrahas[getHouse(eph.mars)].push('కుజ');
+      houseGrahas[getHouse(eph.merc)].push('బుధ');
+      houseGrahas[getHouse(eph.jup)].push('గురు');
+      houseGrahas[getHouse(eph.ven)].push('శుక్ర');
+      houseGrahas[getHouse(eph.sat)].push('శని');
+      houseGrahas[getHouse(eph.rahu)].push('రాహు');
+      houseGrahas[getHouse(eph.ketu)].push('కేతు');
+
+      const pCoords = [
+        { x: 200, y: 120 }, { x: 100, y: 70 },  { x: 50, y: 120 },
+        { x: 120, y: 200 }, { x: 50, y: 280 },  { x: 100, y: 330 },
+        { x: 200, y: 280 }, { x: 300, y: 330 }, { x: 350, y: 280 },
+        { x: 280, y: 200 }, { x: 350, y: 120 }, { x: 300, y: 70 }
+      ];
+
+      let svg = '<svg viewBox="0 0 400 400" width="100%" height="320" style="background: #FFFFFF;">' +
+        '<rect x="10" y="10" width="380" height="380" fill="none" stroke="#B71C1C" stroke-width="2.5" />' +
+        '<line x1="10" y1="10" x2="390" y2="390" stroke="#B71C1C" stroke-width="1.5" />' +
+        '<line x1="390" y1="10" x2="10" y2="390" stroke="#B71C1C" stroke-width="1.5" />' +
+        '<polygon points="200,10 390,200 200,390 10,200" fill="none" stroke="#B71C1C" stroke-width="2" />' +
+        '<text x="200" y="70" text-anchor="middle" font-size="11" font-weight="bold" fill="#B71C1C">1 (లగ్నం)</text>';
+
+      for (let h = 0; h < 12; h++) {
+        const pt = pCoords[h];
+        const gList = houseGrahas[h];
+        const label = gList.length > 0 ? gList.join(' ') : '';
+        const houseSign = RASIS_DATA[(lagnaIndex + h) % 12].nameTe;
+
+        svg += '<text x="' + pt.x + '" y="' + (pt.y - 10) + '" text-anchor="middle" font-size="9" fill="#6B7280">' + (h + 1) + ' • ' + houseSign + '</text>' +
+          '<text x="' + pt.x + '" y="' + (pt.y + 12) + '" text-anchor="middle" font-size="11" font-weight="bold" fill="#15803D">' + label + '</text>';
+      }
+      svg += '</svg>';
+      document.getElementById('kundaliSvgBox').innerHTML = svg;
+    }
+
+    // Render Daily Dress Colors
+    function renderDailyDressColors(activeDashaLord, bDayNum, rasiLord) {
+      const todayIndex = new Date().getDay(); // 0 = Sunday
+      const todayObj = WEEKDAYS_DATA[todayIndex];
+
+      document.getElementById('todayColorBadge').innerText = '★ Today: ' + todayObj.dayEn + ' (' + todayObj.dayTe + ') - ' + todayObj.colorsEn[0];
+
+      let html = '';
+      WEEKDAYS_DATA.forEach((w, idx) => {
+        const isToday = (idx === todayIndex);
+        const cardClass = isToday ? 'day-cloth-card is-today' : 'day-cloth-card';
+        const todayTag = isToday ? '<div class="today-tag-pill">★ TODAY</div>' : '';
+
+        let swatchesHtml = '';
+        w.swatches.forEach((col, i) => {
+          swatchesHtml += '<span class="swatch-chip">' +
+            '<span class="swatch-dot" style="background: ' + col + ';"></span>' +
+            '<span>' + (w.colorsEn[i] || 'Color') + '</span>' +
+            '</span>';
+        });
+
+        // Dynamic chart connection
+        let chartTag = '';
+        if (idx === 0 && bDayNum === 1) chartTag = ' <span style="color: var(--red-kunkuma); font-size: 0.72rem; font-weight: 700;">(మీ జన్మ సంఖ్య 1 వారం)</span>';
+        if (idx === 4 && rasiLord.includes('Jupiter')) chartTag = ' <span style="color: var(--gold-accent); font-size: 0.72rem; font-weight: 700;">(మీ రాశ్యాధిపతి గురుని వారం)</span>';
+        if (idx === 5 && activeDashaLord === 'Venus') chartTag = ' <span style="color: var(--green-haritha); font-size: 0.72rem; font-weight: 700;">(ప్రస్తుత దశాధిపతి శుక్రుని వారం)</span>';
+
+        html += '<div class="' + cardClass + '">' +
+          todayTag +
+          '<div class="day-top-row">' +
+          '<div class="day-avatar" style="background: ' + w.bg + ';">' + w.icon + '</div>' +
+          '<div>' +
+          '<div class="day-label-en">' + w.dayEn + chartTag + '</div>' +
+          '<div class="day-label-te">' + w.dayTe + ' • ' + w.deity + '</div>' +
+          '</div>' +
+          '</div>' +
+          '<div style="font-size: 0.82rem; font-weight: 700; color: var(--green-haritha);">' +
+          'ధరించవలసిన శుభ రంగులు (Auspicious Colors):' +
+          '</div>' +
+          '<div class="swatches-flex">' + swatchesHtml + '</div>' +
+          '<div style="font-size: 0.8rem; color: var(--text-dark);">' +
+          '<strong>తెలుగు రంగులు:</strong> ' + w.colorsTe +
+          '</div>' +
+          '<div style="font-size: 0.8rem; color: var(--red-kunkuma); margin-top: 2px;">' +
+          '<strong>నిషేధించవలసిన రంగులు:</strong> ' + w.avoidTe + ' (' + w.avoidEn + ')' +
+          '</div>' +
+          '<div class="cloth-telugu-desc">' +
+          w.adviceTe +
+          '</div>' +
+          '</div>';
+      });
+
+      document.getElementById('daysColorGrid').innerHTML = html;
+    }
+
+    // --- INTERACTIVE TELUGU CALENDAR ---
+    let currentCalYear = 2026;
+    let currentCalMonth = 11; // November
+    let chosenCalDay = 8;
+
+    const RAHU_KALAM_WEEKDAY = [
+      '04:30 PM - 06:00 PM', // Sunday
+      '07:30 AM - 09:00 AM', // Monday
+      '03:00 PM - 04:30 PM', // Tuesday
+      '12:00 PM - 01:30 PM', // Wednesday
+      '01:30 PM - 03:00 PM', // Thursday
+      '10:30 AM - 12:00 PM', // Friday
+      '09:00 AM - 10:30 AM'  // Saturday
+    ];
+
+    const DHURMUHURTHAM_WEEKDAY = [
+      '04:20 PM - 05:08 PM', // Sunday
+      '12:35 PM - 01:22 PM', // Monday
+      '08:42 AM - 09:30 AM', // Tuesday
+      '11:46 AM - 12:34 PM', // Wednesday
+      '10:14 AM - 11:02 AM', // Thursday
+      '08:48 AM - 09:36 AM', // Friday
+      '06:15 AM - 07:02 AM'  // Saturday
+    ];
+
+    function stepCalMonth(delta) {
+      currentCalMonth += delta;
+      if (currentCalMonth > 12) {
+        currentCalMonth = 1;
+        currentCalYear++;
+      } else if (currentCalMonth < 1) {
+        currentCalMonth = 12;
+        currentCalYear--;
+      }
+      renderMonthView();
+      inspectDate(currentCalYear, currentCalMonth, 1);
+    }
+
+    function jumpToToday() {
+      const today = new Date();
+      currentCalYear = today.getFullYear();
+      currentCalMonth = today.getMonth() + 1;
+      chosenCalDay = today.getDate();
+      renderMonthView();
+      inspectDate(currentCalYear, currentCalMonth, chosenCalDay);
+    }
+
+    function getPanchangamData(y, m, d) {
+      const ayanamsha = 23.85 + (y - 2000) * 0.01397;
+      const daysSince2000 = (Date.UTC(y, m - 1, d, 6, 0) - Date.UTC(2000, 0, 1, 12)) / 86400000;
+
+      const sun = ((280.460 + 0.9856474 * daysSince2000 - ayanamsha) % 360 + 360) % 360;
+      const moon = ((218.316 + 13.176396 * daysSince2000 - ayanamsha) % 360 + 360) % 360;
+
+      const diff = (moon - sun + 360) % 360;
+      const tithiIndex = Math.floor(diff / 12) % 30;
+      const nakIndex = Math.floor(moon / 13.3333333) % 27;
+
+      const jsDate = new Date(y, m - 1, d);
+      const dayOfWeek = jsDate.getDay();
+
+      const amruthaStarts = [
+        '08:45 AM - 10:20 AM', '02:15 PM - 03:50 PM', '11:10 AM - 12:45 PM',
+        '07:30 AM - 09:05 AM', '05:15 PM - 06:48 PM', '09:40 AM - 11:15 AM',
+        '01:25 PM - 03:00 PM', '06:50 AM - 08:25 AM', '04:10 PM - 05:45 PM'
+      ];
+      const amruthaVal = amruthaStarts[nakIndex % amruthaStarts.length];
+
+      const varjyamStarts = [
+        '01:40 PM - 03:15 PM', '08:20 AM - 09:55 AM', '06:10 PM - 07:45 PM',
+        '10:30 AM - 12:05 PM', '03:45 PM - 05:20 PM', '11:55 PM - 01:30 AM'
+      ];
+      const varjyamVal = varjyamStarts[nakIndex % varjyamStarts.length];
+
+      const festKey = m + '-' + d;
+      const festival = TELUGU_FESTIVALS[festKey] || null;
+
+      return {
+        tithiNameTe: TITHI_NAMES_TE[tithiIndex],
+        tithiIndex: tithiIndex,
+        nakNameTe: NAKSHATRAS_27[nakIndex].nameTe,
+        nakIndex: nakIndex,
+        dayOfWeek: dayOfWeek,
+        rahuKalam: RAHU_KALAM_WEEKDAY[dayOfWeek],
+        dhurmuhurtham: DHURMUHURTHAM_WEEKDAY[dayOfWeek],
+        amruthaGadiyalu: amruthaVal,
+        varjyam: varjyamVal,
+        abhijit: '11:48 AM - 12:36 PM',
+        sunrise: '06:14 AM',
+        sunset: '05:48 PM',
+        festival: festival
+      };
+    }
+
+    function renderMonthView() {
+      const monthNames = [
+        'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
+      ];
+      const teluguMonthTitles = [
+        'పుష్య - మాఘ మాసాలు', 'మాఘ - ఫాల్గుణ మాసాలు', 'ఫాల్గుణ - చైత్ర మాసాలు',
+        'చైత్ర - వైశాఖ మాసాలు', 'వైశాఖ - జ్యేష్ఠ మాసాలు', 'జ్యేష్ఠ - ఆషాఢ మాసాలు',
+        'ఆషాఢ - శ్రావణ మాసాలు', 'శ్రావణ - భాద్రపద మాసాలు', 'భాద్రపద - ఆశ్వయుజ మాసాలు',
+        'ఆశ్వయుజ - కార్తీక మాసాలు', 'కార్తీక - మార్గశిర మాసాలు', 'మార్గశిర - పుష్య మాసాలు'
+      ];
+
+      document.getElementById('calMonthTitleText').innerText =
+        '📅 ' + monthNames[currentCalMonth - 1] + ' ' + currentCalYear + ' (' + teluguMonthTitles[currentCalMonth - 1] + ')';
+
+      const daysInMonth = new Date(currentCalYear, currentCalMonth, 0).getDate();
+      const firstDayIndex = new Date(currentCalYear, currentCalMonth - 1, 1).getDay();
+
+      const today = new Date();
+      const isCurrentMonth = (today.getFullYear() === currentCalYear && (today.getMonth() + 1) === currentCalMonth);
+
+      let gridHtml = '<div class="cal-head-cell sun">Sun (ఆది)</div>' +
+        '<div class="cal-head-cell">Mon (సోమ)</div>' +
+        '<div class="cal-head-cell">Tue (మంగళ)</div>' +
+        '<div class="cal-head-cell">Wed (బుధ)</div>' +
+        '<div class="cal-head-cell">Thu (గురు)</div>' +
+        '<div class="cal-head-cell">Fri (శుక్ర)</div>' +
+        '<div class="cal-head-cell">Sat (శని)</div>';
+
+      for (let b = 0; b < firstDayIndex; b++) {
+        gridHtml += '<div class="cal-date-tile is-other"></div>';
+      }
+
+      for (let d = 1; d <= daysInMonth; d++) {
+        const panchang = getPanchangamData(currentCalYear, currentCalMonth, d);
+        const isSunday = (panchang.dayOfWeek === 0);
+        const isChosen = (d === chosenCalDay);
+        const isToday = isCurrentMonth && (d === today.getDate());
+
+        let tileClass = 'cal-date-tile';
+        if (isSunday) tileClass += ' sun-tile';
+        if (isChosen) tileClass += ' is-chosen';
+        if (isToday) tileClass += ' is-today-tile';
+
+        const festBadge = panchang.festival ? '<div class="tile-fest-badge">' + panchang.festival + '</div>' : '';
+
+        gridHtml += '<div class="' + tileClass + '" onclick="inspectDate(' + currentCalYear + ', ' + currentCalMonth + ', ' + d + ')">' +
+          '<div class="tile-num-row">' +
+          '<span class="tile-number">' + d + '</span>' +
+          '<span class="tile-tithi-name">' + (panchang.tithiNameTe.split(' ')[1] || panchang.tithiNameTe) + '</span>' +
+          '</div>' +
+          festBadge +
+          '</div>';
+      }
+
+      document.getElementById('calDaysGrid').innerHTML = gridHtml;
+    }
+
+    function inspectDate(y, m, d) {
+      chosenCalDay = d;
+      renderMonthView();
+
+      const panchang = getPanchangamData(y, m, d);
+      const dayNameEn = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][panchang.dayOfWeek];
+      const dayNameTe = ['ఆదివారం', 'సోమవారం', 'మంగళవారం', 'బుధవారం', 'గురువారం', 'శుక్రవారం', 'శనివారం'][panchang.dayOfWeek];
+
+      const monthNames = [
+        'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
+      ];
+
+      document.getElementById('inspDateStr').innerText = d + ' ' + monthNames[m - 1] + ' ' + y + ', ' + dayNameEn;
+      document.getElementById('inspTithiTitle').innerText = panchang.tithiNameTe + ' | ' + dayNameTe;
+
+      document.getElementById('inspRahuVal').innerText = panchang.rahuKalam;
+      document.getElementById('inspAmruthaVal').innerText = panchang.amruthaGadiyalu;
+      document.getElementById('inspDhurVal').innerText = panchang.dhurmuhurtham;
+      document.getElementById('inspAbhijitVal').innerText = panchang.abhijit;
+
+      document.getElementById('inspTithiDetail').innerText = panchang.tithiNameTe;
+      document.getElementById('inspNakshatraDetail').innerText = panchang.nakNameTe;
+      document.getElementById('inspVarjyamDetail').innerText = panchang.varjyam;
+      document.getElementById('inspSunDetail').innerText = panchang.sunrise + ' / ' + panchang.sunset;
+      document.getElementById('inspYogaDetail').innerText = 'శోభన యోగం / చతుష్పాద కరణం';
+
+      const festRow = document.getElementById('inspFestRow');
+      if (panchang.festival) {
+        festRow.style.display = 'flex';
+        document.getElementById('inspFestDetail').innerText = panchang.festival;
+      } else {
+        festRow.style.display = 'none';
+      }
+    }
+
+    // --- DOM READY INIT ---
+    window.addEventListener('DOMContentLoaded', () => {
+      loadActiveProfileOnStartup();
+      recalculateAccuracy();
+      renderMonthView();
+      inspectDate(2026, 11, 8); // November 8, 2026
+      // Form is clean and ready for user input!
+      // Keep user on Enter Details screen initially
+      switchSection('form');
+    });
+  </script>
+
+  <!-- Corner Branding Badge -->
+  <div class="ap-corner-branding" title="Providence Vedic Destiny - Developed by Asish Pathikayala">
+    <div class="ap-logo-circle">AP</div>
+    <div class="ap-branding-text">
+      <span class="ap-powered-label">POWERED BY</span>
+      <span class="ap-author-name">Asish Pathikayala</span>
+    </div>
+  </div>
+
+</body>
+</html>

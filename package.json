@@ -1,0 +1,49 @@
+{
+  "name": "Providence",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Providence — Cosmic Astrology & Destiny App",
+  "main": "index.js",
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@react-native-community/datetimepicker": "^7.6.2",
+    "@react-navigation/native": "^6.1.9",
+    "@react-navigation/native-stack": "^6.9.17",
+    "astronomy-engine": "^2.1.19",
+    "react": "18.3.1",
+    "react-native": "0.76.0",
+    "react-native-gesture-handler": "^2.15.0",
+    "react-native-linear-gradient": "^2.8.3",
+    "react-native-reanimated": "^3.6.1",
+    "react-native-safe-area-context": "^4.8.2",
+    "react-native-screens": "^3.29.0",
+    "react-native-svg": "^15.0.0",
+    "react-native-vector-icons": "^10.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@babel/preset-env": "^7.20.0",
+    "@babel/runtime": "^7.20.0",
+    "@react-native-community/cli": "^15.0.1",
+    "@react-native-community/cli-server-api": "^15.0.1",
+    "@react-native/babel-preset": "0.76.0",
+    "@react-native/eslint-config": "0.76.0",
+    "@react-native/metro-config": "0.76.0",
+    "@react-native/typescript-config": "0.76.0",
+    "@types/react": "^18.2.6",
+    "@types/react-native-vector-icons": "^6.4.18",
+    "eslint": "^8.19.0",
+    "jest": "^29.6.3",
+    "prettier": "2.8.8",
+    "typescript": "5.0.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Dynamic Test User",
+    "dob": "1998-12-05",
+    "time": "14:20",
+    "place": "Tirupati",
+    "rasi": 8,
+    "nakshatra": "Mula",
+    "savedAt": "2026-11-08T10:38:39.176Z"
+  },
+  {
+    "name": "Cosmic Native",
+    "dob": "1937-12-28",
+    "time": "06:30",
+    "place": "mumbai",
+    "rasi": "6",
+    "nakshatra": "Vishakha",
+    "status": "deceased",
+    "savedAt": "2026-11-08T11:06:30.439Z"
+  },
+  {
+    "name": "Venkata Satya china babu",
+    "dob": "1978-04-01",
+    "time": "10:30",
+    "place": "Hyderabad",
+    "rasi": "0",
+    "nakshatra": "Ashwini",
+    "savedAt": "2026-11-08T10:18:43.021Z"
+  },
+  {
+    "name": "Bhnau manikanta surya prakash",
+    "dob": "2006-02-05",
+    "time": "10:30",
+    "place": "Hyderabad",
+    "rasi": "8",
+    "nakshatra": "Mula",
+    "savedAt": "2026-11-08T10:17:27.692Z"
+  },
+  {
+    "name": "Bhnau manikanta surya prakash",
+    "dob": "2005-02-05",
+    "time": "10:30",
+    "place": "Hyderabad",
+    "rasi": "8",
+    "nakshatra": "Mula",
+    "savedAt": "2026-11-08T10:16:28.105Z"
+  },
+  {
+    "name": "Bhaskara Durga Asish",
+    "dob": "2005-04-01",
+    "time": "10:30",
+    "place": "Hyderabad",
+    "rasi": "8",
+    "nakshatra": "Mula",
+    "savedAt": "2026-11-08T09:50:50.913Z"
+  }
+]
